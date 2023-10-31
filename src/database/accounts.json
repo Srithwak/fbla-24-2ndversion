@@ -5,11 +5,12 @@
     "password": "pwd1",
     "email": "pop@gmail.com",
     "description": "test1",
-    "website": "",
+    "website": "web.com",
     "phone": "8888888888",
     "socialMedia": [
       "Facebook: pop1",
-      "Instagram: pop2"
+      "Instagram: pop2",
+      "snap:123456"
     ],
     "messages": [],
     "associated": [],
