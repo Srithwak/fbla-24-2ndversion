@@ -1,0 +1,75 @@
+[
+  {
+    "id": 0,
+    "username": "name1",
+    "password": "pwd1",
+    "email": "pop@gmail.com",
+    "description": "test1",
+    "website": "",
+    "phone": "8888888888",
+    "socialMedia": [
+      "Facebook: pop1",
+      "Instagram: pop2"
+    ],
+    "messages": [],
+    "associated": [],
+    "hashKey": ""
+  },
+  {
+    "id": 3,
+    "username": "name2",
+    "password": "pwd2",
+    "description": "",
+    "email": "abc@gmail.com",
+    "phone": 1111111111,
+    "website": "",
+    "socialMedia": [],
+    "messages": [],
+    "associated": [],
+    "hashKey": ""
+  },
+  {
+    "id": 1,
+    "username": "name3",
+    "password": "pwd3",
+    "description": "",
+    "email": "xyz@gmail.com",
+    "phone": 5555555555,
+    "website": "",
+    "socialMedia": [],
+    "messages": [],
+    "associated": [],
+    "hashKey": ""
+  },
+  {
+    "id": 2,
+    "username": "school1",
+    "password": "school2",
+    "email": "test@gmail.com",
+    "phone": 9999999999,
+    "website": "sth.com",
+    "messages": [],
+    "socialMedia": [],
+    "associated": [
+      {
+        "id": 0,
+        "money": null,
+        "resources": []
+      }
+    ],
+    "otherAssociated": [
+      {
+        "name": "pop9",
+        "money": null,
+        "resources": []
+      }
+    ],
+    "notes": [
+      {
+        "id": 0,
+        "note": ""
+      }
+    ],
+    "hashKey": ""
+  }
+]

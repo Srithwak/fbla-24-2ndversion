@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Edit Account</title>
+  <script src="editAccount.js"></script>
+</head>
+
+<body onload="onLoadRun1()">
+  <label>Username:</label>
+  <input type="text" class="username" required><br><br>
+
+  <label>Password:</label>
+  <input type="password" class="password" required><br><br>
+
+  <label>Email:</label>
+  <input type="email" class="email" required><br><br>
+
+  <label>Description:</label>
+  <textarea class="description" required></textarea><br><br>
+
+  <label>Website:</label>
+  <input type="text" class="website" required><br><br>
+
+  <label>Phone:</label>
+  <input type="text" class="phone" required><br><br>
+
+  <div class="socialMediaContainer">
+    <label>Social Media:</label>
+    <div class="socialMediaInputs">
+    </div>
+    <input type="button" value="Add Social Media" onclick="addSocialMedia()">
+  </div>
+
+  <button onclick="editAccount()">Edit Account</button>
+
+  <script src="editAccount.js"></script>
+</body>
+
+</html>
