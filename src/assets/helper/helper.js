@@ -30,7 +30,7 @@ function makePartnerAccount(username, password, email) { //not tested
       id: findNextID(path.join(__dirname, '../../database/accounts.json')),
       username: username,
       password: password,
-      description: null,
+      description: '',
       email: email,
       phone: 0,
       website: "",
@@ -39,7 +39,9 @@ function makePartnerAccount(username, password, email) { //not tested
       associated: [],
       hashKey: ""
    }
-   // uploadJSON(path.join(__dirname, '../../database/accounts.json'), getJSON(path.join(__dirname, '../../database/accounts.json')).push(account));
+   let arr = getJSON(path.join(__dirname, '../../database/accounts.json'));
+   arr.push(account);
+   uploadJSON(path.join(__dirname, '../../database/accounts.json'), arr);
    console.log(account);
    return account;
 }
@@ -50,8 +52,8 @@ function makeSchoolAccount(username, password, email) { //not tested
       username: username,
       password: password,
       email: email,
-      phone: null,
-      website: null,
+      phone: 0,
+      website: '',
       description: "",
       messages: [],
       socialMedia: [],
@@ -60,8 +62,9 @@ function makeSchoolAccount(username, password, email) { //not tested
       notes: [],
       hashKey: ""
    }
-   // uploadJSON(path.join(__dirname, '../../database/accounts.json'), getJSON(path.join(__dirname, '../../database/accounts.json')).push(account));
-   console.log(account);
+   let arr = getJSON(path.join(__dirname, '../../database/accounts.json'));
+   arr.push((account));
+   uploadJSON(path.join(__dirname, '../../database/accounts.json'), arr);
    return account;
 }
 

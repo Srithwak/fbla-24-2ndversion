@@ -18,7 +18,7 @@ const createWindow = () => {
    });
    if (isDev) win.webContents.openDevTools();
    // win.loadFile(path.join(__dirname, './assets/login.html'));
-   win.loadFile(path.join(__dirname, './assets/login.html'));
+   win.loadFile(path.join(__dirname, './assets/signUp.html'));
 }
 
 app.whenReady().then(() => {

@@ -14,7 +14,7 @@ function login() {
    let accounts = getJSON(path.join(__dirname, '../database/accounts.json'));
    for (i of accounts)
       if (i.username == username && i.password == password) {
-         localStorage.setItem("id", JSON.stringify(i.id)); //sets the user object to localStorage (test this)
+         localStorage.setItem("id", JSON.stringify(i.id)); //sets the user object to localStorage
          location.href = 'editAccount.html';
          return;
       }
