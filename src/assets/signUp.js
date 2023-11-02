@@ -1,14 +1,10 @@
 const { makePartnerAccount, makeSchoolAccount, searchAttribute } = require('./helper/helper');
 
 function toRun() {
-   // const username = document.querySelector(".username").value;
-   // const password1 = document.querySelector(".password1").value;
-   // const password2 = document.querySelector(".password2").value;
-   // const email = document.querySelector(".email").value;
-   const username = 'srithwak';
-   const password1 = 'Popop12345*';
-   const password2 = 'Popop12345*';
-   const email = 'srithwak@gmail.com';
+   const username = document.querySelector(".username").value;
+   const password1 = document.querySelector(".password1").value;
+   const password2 = document.querySelector(".password2").value;
+   const email = document.querySelector(".email").value;
    if (searchAttribute('username').includes(username)) return console.log("Username already exists"); //errorPopup
    else if (searchAttribute('email').includes(email)) return console.log("Email already exists"); //errorPopup
    else if (password1 != password2) return console.log("Passwords do not match"); //errorPopup
