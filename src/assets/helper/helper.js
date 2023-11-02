@@ -52,6 +52,7 @@ function makeSchoolAccount(username, password, email) { //not tested
       email: email,
       phone: null,
       website: null,
+      description: "",
       messages: [],
       socialMedia: [],
       associated: [],

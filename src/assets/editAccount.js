@@ -9,12 +9,27 @@ function onLoadRun1() {
   document.querySelector('.description').value = account.description;
   document.querySelector('.website').value = account.website;
   document.querySelector('.phone').value = account.phone;
+  const socialMediaContainer = document.querySelector('.socialMediaContainer');
+  socialMediaContainer.innerHTML = '';
+  const label = document.createElement('label');
+  label.textContent = 'Social Media:';
+  socialMediaContainer.appendChild(label);
+  const addButton = document.createElement('input');
+  addButton.type = 'button';
+  addButton.value = 'Add Social Media';
+  addButton.addEventListener('click', addSocialMedia);
+  socialMediaContainer.appendChild(addButton);
   for (let i of account.socialMedia)
     addSocialMedia(i);
 }
 
 function addSocialMedia(value = '') {
+  if (value == '[object PointerEvent]')
+    value = '';
   const socialMediaContainer = document.querySelector('.socialMediaContainer');
+  for (let i = 0; i < document.querySelectorAll('.socialMedia').length; i++)
+    if (document.querySelectorAll('.socialMedia')[i].value == '')
+      return;
   const socialMediaInputs = document.createElement('div');
   const inputElement = document.createElement('input');
   inputElement.type = 'text';
@@ -39,18 +54,16 @@ function editAccount() {
   };
   const socialMediaInputs = document.querySelectorAll('.socialMedia');
   socialMediaInputs.forEach(input => {
-    if(input.value != '')
+    if (input.value != '')
       account.socialMedia.push(input.value);
   });
-
   let data = getJSON(path.join(__dirname, '../database/accounts.json'));
-  for (let i = 0; i < data.length; i++) {
+  for (let i = 0; i < data.length; i++)
     if (data[i].id == localStorage.getItem('id')) {
       account.messages = data[i].messages;
       account.associated = data[i].associated;
       account.hashKey = data[i].hashKey;
       data[i] = account;
     }
-  }
   uploadJSON(path.join(__dirname, '../database/accounts.json'), data);
 }
