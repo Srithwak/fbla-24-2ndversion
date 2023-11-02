@@ -12,7 +12,7 @@ function onLoadRun1() {
   for (let i of account.socialMedia)
     addSocialMedia(i);
 }
-  
+
 function addSocialMedia(value = '') {
   const socialMediaContainer = document.querySelector('.socialMediaContainer');
   const socialMediaInputs = document.createElement('div');
