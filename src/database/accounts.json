@@ -54,21 +54,64 @@
     "associated": [
       {
         "id": 0,
-        "money": null,
-        "resources": []
+        "money": 20,
+        "resources": "test2",
+        "details": "trash"
+      },
+      {
+        "id": 1,
+        "money": 200,
+        "resources": "test9",
+        "details": "trash9"
       }
     ],
     "otherAssociated": [
       {
         "name": "pop9",
-        "money": null,
-        "resources": []
+        "money": 40,
+        "resources": "test1",
+        "details": "trash2",
+        "listed": false
       }
     ],
     "notes": [
       {
         "id": 0,
-        "note": ""
+        "note": "trash"
+      }
+    ],
+    "hashKey": ""
+  },
+  {
+    "id": 6,
+    "username": "schools1",
+    "password": "schools2",
+    "email": "test3@gmail.com",
+    "phone": 7777777777,
+    "website": "sth3.com",
+    "messages": [],
+    "socialMedia": [],
+    "description": "",
+    "associated": [
+      {
+        "id": 0,
+        "money": 20,
+        "resources": "test2",
+        "details": "trash79"
+      }
+    ],
+    "otherAssociated": [
+      {
+        "name": "pop9",
+        "money": 40,
+        "resources": "test1",
+        "details": "trash2"
+      }
+    ],
+    "notes": [
+      {
+        "id": 0,
+        "note": "trash"
       }
     ],
     "hashKey": ""

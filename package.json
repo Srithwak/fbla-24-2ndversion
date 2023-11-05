@@ -4,6 +4,7 @@
       "electron": "^27.0.2"
    },
    "scripts": {
-      "start": "electron ."
+      "start": "electron .",
+      "electron": "ELECTRON_DISABLE_SECURITY_WARNINGS=true electron ."
    }
 }

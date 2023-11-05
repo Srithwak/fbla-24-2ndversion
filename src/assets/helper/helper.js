@@ -73,12 +73,19 @@ function searchAttribute(attribute, data) {
    return data.filter(obj => obj.hasOwnProperty(attribute)).map(obj => obj[attribute]);
 }
 
+function findElementById(id, file = getJSON(path.join(__dirname, '../../database/accounts.json'))) {
+   for(let i = 0; i < file.length; i++)
+      if(file[i].id == id)
+         return i;
+   return -1;
+}
+
 function getObj(id) {
    return getJSON(path.join(__dirname, '../../database/accounts.json')).find(obj => obj.id == id);
 }
 
 function getObjUser(username){
-  return getJSON('accounts.json').find(obj => obj.username == username);
+  return getJSON(path.join(__dirname, '../../database/accounts.json')).find(obj => obj.username == username);
 }
 
 function errorPopup() { //error popup function
@@ -86,6 +93,6 @@ function errorPopup() { //error popup function
 }
 
 module.exports = {
-   fs, getJSON, uploadJSON, sortByID, findNextID, makePartnerAccount, makeSchoolAccount, searchAttribute, getObj, getObjUser, errorPopup
+   fs, getJSON, uploadJSON, sortByID, findNextID, makePartnerAccount, makeSchoolAccount, searchAttribute, getObj, getObjUser, findElementById, errorPopup
 };
 
