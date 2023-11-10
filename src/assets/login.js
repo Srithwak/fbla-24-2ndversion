@@ -15,7 +15,7 @@ function login() {
    for (i of accounts)
       if (i.username == username && i.password == password) {
          localStorage.setItem("id", JSON.stringify(i.id)); //sets the user object to localStorage
-         location.href = 'editAccount.html';
+         location.href = 'associated.html';
          return;
       }
    console.log('Incorrect username or password'); //errorPopup

@@ -1,37 +1,25 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Display Associated Data</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+    <title>Grid Table with Names</title>
+    <style></style>
 </head>
-<body>
-    <!-- Filter inputs for name, money, and resources -->
-    <h1>Associated Data</h1>
-    <!-- Filter inputs -->
-    <input type="text" id="usernameFilter" placeholder="Filter by Username" onkeyup="filterTable()">
-    <select id="moneyFilterOption" onchange="filterTable()">
-        <option value="less">Less Than</option>
-        <option value="greater">Greater Than</option>
-    </select>
-    <input type="number" id="moneyFilterValue" placeholder="Filter by Money" onkeyup="filterTable()">
-    <input type="text" id="resourcesFilter" placeholder="Filter by Resources" onkeyup="filterTable()"><br><br>
-    <input type="button" value="Save changes" onclick="saveChanges()">
-    <input type="button" value="Cancel changes" onclick="renderTable()">
-    <!-- The table will be rendered here -->
-    <div id="tableContainer"></div>
+
+<body class="container">
+    <table id="gridTable"></table><br><br>
+    <input type="text" id="usernameFilter" placeholder="username" onkeyup="filter()"><br>
+    <input type="radio" id="less" name="fav_language" value="less" onkeyup = "filter()">
+    <label for="html">less</label><br>
+    <input type="radio" id="greater" name="fav_language" value="greater" onkeyup = "filter()">
+    <label for="css">greater</label><br>
+    <input type="number" id="moneyFilter" placeholder="money" onkeyup="filter()"><br>
+    <input type="text" id="resourcesFilter" placeholder="resources" onkeyup="filter()"><br>
+    <input type="text" id="notesFilter" placeholder="notes" onkeyup="filter()"><br>
+    <input type="button" id="saveChanges" onclick="saveChanges()" value="save changes">
+    <input type="button" id="saveChanges" onclick="displayAssociated()" value="cancel changes"><br><br>
+
     <script src="associated.js"></script>
 </body>
+
 </html>

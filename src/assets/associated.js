@@ -1,118 +1,143 @@
-const { getObj, uploadJSON, getJSON, findElementById } = require('./helper/helper');
+const { getObj, uploadJSON, getJSON, findElementById, getObjUser } = require('./helper/helper');
 const path = require('path');
+// const accountData = getJSON(path.join(__dirname, '../database/accounts.json'));
 
-// Function to render the table with associated data
-function renderTable(associatedData = getObj(localStorage.getItem('id'))) {
+function displayAssociated(loggedInAccount = getJSON(path.join(__dirname, '../database/accounts.json')).find(account => account.id === parseInt(localStorage.getItem('id'), 10)) ) {
+    // Retrieve the logged-in user's ID from localStorage
+    const loggedInId = localStorage.getItem('id');
+    // let accountData = getJSON(path.join(__dirname, '../database/accounts.json'));
+    // const loggedInAccount = accountData.find(account => account.id === parseInt(loggedInId, 10));
+    // console.log(loggedInAccount)
+    if (!loggedInAccount) location.href = 'login.html'; // Exit if no account matches
 
-    const associatedTable = document.createElement('table');
-    associatedTable.style.borderCollapse = 'collapse';
-    associatedTable.style.width = '100%';
+    // Clear the existing table content
+    const table = document.getElementById('gridTable');
+    table.innerHTML = ''; // This clears the table
 
-    const tableHeader = associatedTable.createTHead();
-    const headerRow = tableHeader.insertRow();
-    ['Associated Name', 'Money', 'Resources', 'Notes'].forEach(headerText => {
-        const th = document.createElement('th');
-        th.style.border = '1px solid #dddddd';
-        th.style.textAlign = 'left';
-        th.style.padding = '8px';
-        th.style.backgroundColor = '#f2f2f2';
-        th.textContent = headerText;
-        headerRow.appendChild(th);
+    const header = table.createTHead();
+    const headerRow = header.insertRow(0);
+    const headers = ['Username', 'Money', 'Resources', 'Notes'];
+
+    // Insert header cells with text content
+    headers.forEach((headerText, index) => {
+        const headerCell = headerRow.insertCell(index);
+        headerCell.textContent = headerText;
+    });
+    // Function to add rows to the table for 'associated'
+    loggedInAccount.associated.forEach(assoc => {
+        const row = table.insertRow();
+        const username = getObj(assoc.id).username; // Retrieve the username using the provided function
+
+        // Insert editable cells for username, money, resources, and details
+        row.insertCell(0).textContent = username;
+        const moneyCell = row.insertCell(1);
+        moneyCell.contentEditable = true;
+        moneyCell.textContent = assoc.money;
+
+        const resourcesCell = row.insertCell(2);
+        resourcesCell.contentEditable = true;
+        resourcesCell.textContent = assoc.resources;
+
+        const detailsCell = row.insertCell(3);
+        detailsCell.contentEditable = true;
+        detailsCell.textContent = assoc.details;
+
+        // Create a delete button and insert it into the fifth cell
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Remove';
+        deleteButton.onclick = function () {
+            row.remove(); // This removes the row from the table
+        };
+        row.insertCell(4).appendChild(deleteButton);
     });
 
-    if (associatedData.associated && associatedData.associated.length > 0) {
-        associatedData.associated.forEach(assoc => {
-            const row = associatedTable.insertRow();
-            let money = assoc.money !== null ? assoc.money : 'N/A';
-            let resources = assoc.resources ? assoc.resources : 'N/A';
-            let details = assoc.details !== '' ? assoc.details : 'N/A';
+    // Function to add rows to the table for 'otherAssociated'
+    loggedInAccount.otherAssociated.forEach(assoc => {
+        const row = table.insertRow();
 
-            row.innerHTML = `
-                <td>${getObj(assoc.id).username}</td>
-                <td contenteditable="true">${money}</td>
-                <td contenteditable="true">${resources}</td>
-                <td contenteditable="true">${details}</td>
-            `;
-        });
-    }
+        // Insert editable cells for username (with note), money, resources, and details
+        row.insertCell(0).textContent = `${assoc.username} (account not listed)`;
+        const moneyCell = row.insertCell(1);
+        moneyCell.contentEditable = true;
+        moneyCell.textContent = assoc.money;
 
-    if (associatedData.otherAssociated && associatedData.otherAssociated.length > 0) {
-        associatedData.otherAssociated.forEach(assoc => {
-            const row = associatedTable.insertRow();
-            let money = assoc.money !== null ? assoc.money : 'N/A';
-            let resources = assoc.resources ? assoc.resources : 'N/A';
-            let details = assoc.details !== '' ? assoc.details : 'N/A';
+        const resourcesCell = row.insertCell(2);
+        resourcesCell.contentEditable = true;
+        resourcesCell.textContent = assoc.resources;
 
-            row.innerHTML = `
-                <td>${assoc.name} (Account not listed)</td>
-                <td contenteditable="true">${money}</td>
-                <td contenteditable="true">${resources}</td>
-                <td contenteditable="true">${details}</td>
-            `;
-        });
-    }
+        const detailsCell = row.insertCell(3);
+        detailsCell.contentEditable = true;
+        detailsCell.textContent = assoc.details;
 
-    const tableContainer = document.getElementById('tableContainer');
-    tableContainer.innerHTML = ''; // Clear previous table content
-    tableContainer.appendChild(associatedTable);
-}
+        // Create a delete button and insert it into the fifth cell
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Remove';
+        deleteButton.onclick = function () {
+            row.remove(); // This removes the row from the table
 
-// Save changes function
-function saveChanges(upload = true, allAccounts = getJSON(path.join(__dirname, '../database/accounts.json'))) {
-    // Get all cells with the contenteditable attribute set to true
-    const editableCells = document.querySelectorAll('td[contenteditable="true"]');
-    const data = [];
-
-    // Iterate through each cell and extract its content
-    editableCells.forEach(cell => {
-        const cellContent = cell.textContent.trim();
-        data.push(cellContent);
+        };
+        row.insertCell(4).appendChild(deleteButton);
     });
-
-    let account = getObj(localStorage.getItem('id'));
-    let pointer = 0;
-    for (let i = 0; i < account.associated.length; i++) {
-        account.associated[i].money = parseInt(data[pointer]);
-        pointer++;
-        account.associated[i].resources = data[pointer];
-        pointer++;
-        account.associated[i].details = data[pointer];
-        pointer++;
-    }
-    for (let i = 0; i < account.otherAssociated.length; i++) {
-        account.otherAssociated[i].money = parseInt(data[pointer]);
-        pointer++;
-        account.otherAssociated[i].resources = data[pointer];
-        pointer++;
-        account.otherAssociated[i].details = data[pointer];
-        pointer++;
-    }
-    for (let i = 0; i < allAccounts.length; i++) {
-        if (allAccounts[i].id == localStorage.getItem('id'))
-            allAccounts.splice(i, 1, account);
-    }
-    if (upload){
-        uploadJSON(path.join(__dirname, '../database/accounts.json'), allAccounts);
-    }
-    return allAccounts;
 }
 
-function filterTable() { //doesnt work
-    let allAccounts = saveChanges(false); // Assuming saveChanges returns the data
-    let elem = findElementById(localStorage.getItem('id'));
-    const usernameFilter = document.getElementById('usernameFilter').value.toLowerCase();
-    const moneyFilter = parseInt(document.getElementById('moneyFilterValue').value);
-    const moneyOptionFilter = document.getElementById('moneyFilterOption').value
-    const resourceFilter = document.getElementById('resourcesFilter').value.toLowerCase();
-    for(let i = 0; i < allAccounts[elem].associated.length; i++)
-        if(!getObj(allAccounts[elem].associated[i].id).username.includes(usernameFilter)){
-            allAccounts[elem].associated.splice(i, 1);
-            i--;
-        } 
-    
-    renderTable(allAccounts[elem]);
-    console.log(allAccounts[elem].associated);
+function saveChanges() {
+    const table = document.getElementById('gridTable');
+    const rows = table.rows;
+    let associatedData = [];
+    let otherAssociatedData = [];
+    for (let i = 1; i < rows.length; i++) {
+        const cells = rows[i].cells;
+        if (!cells[0].textContent.includes('(account not listed)')) {
+            associatedData.push({
+                id: getObjUser(cells[0].textContent).id,
+                money: cells[1].textContent,
+                resources: cells[2].textContent,
+                details: cells[3].textContent
+            });
+        } else {
+            otherAssociatedData.push({
+                username: cells[0].textContent.replace('(account not listed)', ''),
+                money: cells[1].textContent,
+                resources: cells[2].textContent,
+                details: cells[3].textContent
+            });
+        }
+    }
+    let accountData = getJSON(path.join(__dirname, '../database/accounts.json'));
+    for(let i = 0; i < accountData.length; i++) {
+        if(accountData[i].id == localStorage.getItem('id')) {
+            accountData[i].associated = associatedData;
+            accountData[i].otherAssociated = otherAssociatedData;
+            break;
+        }
+    }
+    uploadJSON(path.join(__dirname, '../database/accounts.json'), accountData);
+    console.log('Associated Data:', associatedData); // Log the current state of the 'associated' accounts
+    console.log('Other Associated Data:', otherAssociatedData); // Log the current state of 'otherAssociated' accounts
 }
 
-// Call the function to render the table
-renderTable();
+function filter() {
+    let usernameFilter = document.getElementById('usernameFilter');
+    let moneyFilter = document.getElementById('moneyFilter');
+    let resourcesFilter = document.getElementById('resourcesFilter');
+    let notesFilter = document.getElementById('notesFilter');
+    const radios = document.getElementsByName('fav_language');
+    let selectedValue = '';
+    for (let i = 0; i < radios.length; i++)
+        if (radios[i].checked) {
+            selectedValue = radios[i].value;
+            break;
+        }
+    let accountData = getObj(localStorage.getItem('id'));
+    let associated = getObj(localStorage.getItem('id')).associated;
+    let otherAssociated = getObj(localStorage.getItem('id')).otherAssociated;
+    // for(let i = 0; i < associated.length; i++) {
+
+    // }
+    // associated = [];
+    // displayAssociated(accountData);
+    console.log(associated);
+    console.log(otherAssociated)
+}
+
+displayAssociated();
