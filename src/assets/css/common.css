@@ -1,0 +1,87 @@
+
+.hamBody {
+   margin: 0;
+   overflow-x: hidden;
+}
+
+.nav-open .nav {
+   transform: translateX(0);
+}
+
+.nav-open .hamMain {
+   transform: translateX(350px);
+}
+
+.nav {
+   width: 350px;
+   height: 100vh;
+   position: fixed;
+   top: 0;
+   left: 0;
+   background: #F5F5DC;
+   transform: translateX(-350px);
+   transition: transform 0.2s;
+   overflow: hidden;
+}
+
+.nav-close {
+   background: none;
+   display: flex;
+   align-items: center;
+   border: none;
+   padding: 15px 25px;
+   color: #dddddd;
+   margin-left: auto;
+   cursor: pointer;
+}
+
+.nav-close:hover {
+   background: #5A5A5A;
+}
+
+.nav-links-container {
+   box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nav__link {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 15px 25px;
+   text-decoration: none;
+   color: #5A5A5A;
+}
+
+.nav__text {
+   font-size: 22px;
+   font-family: "Assistant", sans-serif;
+   font-weight: 500;
+}
+
+.nav__link:hover {
+   background: rgba(255, 255, 255, 0.05);
+}
+
+.hamMain {
+   transition: transform 0.2s;
+}
+
+.sub-buttons {
+   display: none;
+   position: absolute;
+   top: 100%;
+   left: 0;
+}
+
+.sub-button {
+   display: block;
+   width: 100%;
+   padding: 15px 25px;
+   text-decoration: none;
+   color: #5A5A5A;
+   background: rgba(255, 255, 255, 0.05);
+}
+
+.sub-button:hover {
+   background: rgba(255, 255, 255, 0.1);
+}
