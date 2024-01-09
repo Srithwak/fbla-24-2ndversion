@@ -1,6 +1,33 @@
 const fs = require('fs'); //json
 const path = require('path')
 
+
+
+// HEADER STUFF
+function toggleIcon() {
+   const icon = document.querySelector('i');
+   const state = icon.getAttribute('data-state');
+   if (state === 'closed') {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
+      icon.setAttribute('data-state', 'open');
+   } else {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+      icon.setAttribute('data-state', 'closed');
+   }
+}
+
+function toggleNav() {
+   document.body.classList.toggle("nav-open");
+   toggleIcon();
+}
+
+
+
+
+
+
 function getJSON(file) { //gets data from JSON file in a useable format
    return JSON.parse(fs.readFileSync(file));
 }
@@ -19,9 +46,9 @@ function sortByID(jsonFile = (path.join(__dirname, '../../database/accounts.json
 
 function findNextID(jsonFile = (path.join(__dirname, '../../database/accounts.json'))) { //finds the next available ID to use
    let jsonData;
-   if(Array.isArray(jsonFile))
+   if (Array.isArray(jsonFile))
       jsonData = jsonFile;
-   else 
+   else
       jsonData = sortByID(jsonFile);
    for (let i = 0; i < jsonData.length; i++)
       if (jsonData[i].id != i)
@@ -79,8 +106,8 @@ function searchAttribute(attribute, data) {
 }
 
 function findElementById(id, file = getJSON(path.join(__dirname, '../../database/accounts.json'))) {
-   for(let i = 0; i < file.length; i++)
-      if(file[i].id == id)
+   for (let i = 0; i < file.length; i++)
+      if (file[i].id == id)
          return i;
    return -1;
 }
@@ -89,8 +116,8 @@ function getObj(id) {
    return getJSON(path.join(__dirname, '../../database/accounts.json')).find(obj => obj.id == id);
 }
 
-function getObjUser(username){
-  return getJSON(path.join(__dirname, '../../database/accounts.json')).find(obj => obj.username == username);
+function getObjUser(username) {
+   return getJSON(path.join(__dirname, '../../database/accounts.json')).find(obj => obj.username == username);
 }
 
 
