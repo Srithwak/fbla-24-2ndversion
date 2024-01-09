@@ -18,7 +18,11 @@ function sortByID(jsonFile = (path.join(__dirname, '../../database/accounts.json
 }
 
 function findNextID(jsonFile = (path.join(__dirname, '../../database/accounts.json'))) { //finds the next available ID to use
-   let jsonData = sortByID(jsonFile);
+   let jsonData;
+   if(Array.isArray(jsonFile))
+      jsonData = jsonFile;
+   else 
+      jsonData = sortByID(jsonFile);
    for (let i = 0; i < jsonData.length; i++)
       if (jsonData[i].id != i)
          return i;
@@ -36,7 +40,8 @@ function makePartnerAccount(username, password, email) { //not tested
       website: "",
       socialMedia: [],
       messages: [],
-      associated: [],
+      visibility: "public",
+      log: [],
       hashKey: ""
    }
    let arr = getJSON(path.join(__dirname, '../../database/accounts.json'));
@@ -59,7 +64,7 @@ function makeSchoolAccount(username, password, email) { //not tested
       socialMedia: [],
       associated: [],
       otherAssociated: [],
-      notes: [],
+      log: [],
       hashKey: ""
    }
    let arr = getJSON(path.join(__dirname, '../../database/accounts.json'));
@@ -87,6 +92,7 @@ function getObj(id) {
 function getObjUser(username){
   return getJSON(path.join(__dirname, '../../database/accounts.json')).find(obj => obj.username == username);
 }
+
 
 function errorPopup() { //error popup function
 

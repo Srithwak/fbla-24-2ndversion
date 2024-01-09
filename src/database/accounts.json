@@ -3,16 +3,14 @@
     "id": 0,
     "username": "name1",
     "password": "pwd1",
+    "description": "",
     "email": "pop@gmail.com",
-    "description": "test1",
-    "website": "web.com",
-    "phone": "8888888888",
-    "socialMedia": [
-      "Facebook: pop1",
-      "Instagram: pop2"
-    ],
+    "phone": 8888888888,
+    "website": "",
+    "socialMedia": ["Facebook: pop1", "Instagram: pop2"],
     "messages": [],
-    "associated": [],
+    "visibility": "public",
+    "log": [],
     "hashKey": ""
   },
   {
@@ -25,7 +23,8 @@
     "website": "",
     "socialMedia": [],
     "messages": [],
-    "associated": [],
+    "visibility": "public",
+    "log": [],
     "hashKey": ""
   },
   {
@@ -38,7 +37,8 @@
     "website": "",
     "socialMedia": [],
     "messages": [],
-    "associated": [],
+    "visibility": "public",
+    "log": [],
     "hashKey": ""
   },
   {
@@ -51,6 +51,7 @@
     "messages": [],
     "socialMedia": [],
     "description": "",
+    "log": [],
     "associated": [
       {
         "id": 0,
@@ -67,7 +68,7 @@
     ],
     "otherAssociated": [
       {
-        "username": "Praneeth ",
+        "username": "Praneeth",
         "money": "40",
         "resources": "test1",
         "details": "hiya2"
@@ -91,6 +92,7 @@
     "messages": [],
     "socialMedia": [],
     "description": "",
+    "log": [],
     "associated": [
       {
         "id": 0,

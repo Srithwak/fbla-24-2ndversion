@@ -1,67 +1,118 @@
 [
-    {
-      "id": 0,
-      "username": "name1",
-      "password": "pwd1",
-      "description": "",
-      "email": "pop@gmail.com",
-      "phone": 8888888888,
-      "website": "",
-      "socialMedia": ["Facebook: pop1", "Instagram: pop2"],
-      "messages": [],
-      "associated": [],
-      "hashKey": ""
-    },
-    {
-      "id": 3,
-      "username": "name2",
-      "password": "pwd2",
-      "description": "",
-      "email": "abc@gmail.com",
-      "phone": 1111111111,
-      "website": "",
-      "socialMedia": [],
-      "messages": [],
-      "associated": [],
-      "hashKey": ""
-    },
-    {
-      "id": 1,
-      "username": "name3",
-      "password": "pwd3",
-      "description": "",
-      "email": "xyz@gmail.com",
-      "phone": 5555555555,
-      "website": "",
-      "socialMedia": [],
-      "messages": [],
-      "associated": [],
-      "hashKey": ""
-    },
-    {
-      "id": 2,
-      "username": "school1",
-      "password": "school2",
-      "email": "test@gmail.com",
-      "phone": 9999999999,
-      "website": "sth.com",
-      "messages": [],
-      "socialMedia": [],
-      "associated": [{
+  {
+    "id": 0,
+    "username": "name1",
+    "password": "pwd1",
+    "email": "pop@gmail.com",
+    "description": "test1",
+    "website": "web.com",
+    "phone": "8888888888",
+    "socialMedia": [
+      "Facebook: pop1",
+      "Instagram: pop2"
+    ],
+    "messages": [],
+    "associated": [],
+    "hashKey": ""
+  },
+  {
+    "id": 3,
+    "username": "name2",
+    "password": "pwd2",
+    "description": "",
+    "email": "abc@gmail.com",
+    "phone": 1111111111,
+    "website": "",
+    "socialMedia": [],
+    "messages": [],
+    "associated": [],
+    "hashKey": ""
+  },
+  {
+    "id": 1,
+    "username": "name3",
+    "password": "pwd3",
+    "description": "",
+    "email": "xyz@gmail.com",
+    "phone": 5555555555,
+    "website": "",
+    "socialMedia": [],
+    "messages": [],
+    "associated": [],
+    "hashKey": ""
+  },
+  {
+    "id": 2,
+    "username": "school1",
+    "password": "school2",
+    "email": "test@gmail.com",
+    "phone": 9999999999,
+    "website": "sth.com",
+    "messages": [],
+    "socialMedia": [],
+    "description": "",
+    "associated": [
+      {
         "id": 0,
-        "money": null,
-        "resources": []
-      }],
-      "otherAssociated": [{
+        "money": "20",
+        "resources": "test2",
+        "details": "trash"
+      },
+      {
+        "id": 1,
+        "money": "200",
+        "resources": "test9",
+        "details": "trash9"
+      }
+    ],
+    "otherAssociated": [
+      {
+        "username": "Praneeth ",
+        "money": "40",
+        "resources": "test1",
+        "details": "hiya2"
+      }
+    ],
+    "notes": [
+      {
+        "id": 0,
+        "note": "trash"
+      }
+    ],
+    "hashKey": ""
+  },
+  {
+    "id": 6,
+    "username": "schools1",
+    "password": "schools2",
+    "email": "test3@gmail.com",
+    "phone": 7777777777,
+    "website": "sth3.com",
+    "messages": [],
+    "socialMedia": [],
+    "description": "",
+    "associated": [
+      {
+        "id": 0,
+        "money": 20,
+        "resources": "test2",
+        "details": "trash79"
+      }
+    ],
+    "otherAssociated": [
+      {
         "name": "pop9",
-        "money": null,
-        "resources": []
-      }],
-      "notes": [{
+        "money": 40,
+        "resources": "test1",
+        "details": "trash2"
+      }
+    ],
+    "notes": [
+      {
         "id": 0,
-        "note": ""
-      }],
-      "hashKey": ""
-    }
-  ]
-  
+        "note": "trash"
+      }
+    ],
+    "hashKey": ""
+  }
+]

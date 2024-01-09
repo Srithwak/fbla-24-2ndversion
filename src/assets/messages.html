@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Table</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+<table>
+  <thead>
+    <tr>
+      <th>From ID</th>
+      <th>To ID</th>
+      <th>Type</th>
+      <th>Money</th>
+      <th>Resources</th>
+      <th>Message</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody id="messageTableBody">
+    <!-- Table body content goes here -->
+  </tbody>
+</table>
+
+<script src="messages.js"></script>
+</body>
+</html>

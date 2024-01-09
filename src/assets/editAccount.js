@@ -9,6 +9,7 @@ function onLoadRun1() {
   document.querySelector('.description').value = account.description;
   document.querySelector('.website').value = account.website;
   document.querySelector('.phone').value = account.phone;
+  document.querySelector('.visibility').value = account.visibility;
   const socialMediaContainer = document.querySelector('.socialMediaContainer');
   socialMediaContainer.innerHTML = '';
   const label = document.createElement('label');
@@ -42,7 +43,7 @@ function addSocialMedia(value = '') {
 }
 
 function editAccount() {
-  const account = {
+  let account = {
     id: parseInt(localStorage.getItem('id')),
     username: document.querySelector('.username').value,
     password: document.querySelector('.password').value,
@@ -58,12 +59,14 @@ function editAccount() {
       account.socialMedia.push(input.value);
   });
   let data = getJSON(path.join(__dirname, '../database/accounts.json'));
-  for (let i = 0; i < data.length; i++)
-    if (data[i].id == localStorage.getItem('id')) {
-      account.messages = data[i].messages;
-      account.associated = data[i].associated;
-      account.hashKey = data[i].hashKey;
-      data[i] = account;
-    }
+  for (let i = 0; i < data.length; i++) {
+    account.log = data[i].log;
+    account.messages = data[i].messages;
+    account.hashKey = data[i].hashKey;
+    account.log = log;
+  }
+  if (data[i].visibility != undefined)
+    account.visibility = document.querySelector('.visibility').value;
+  data[i] = account;
   uploadJSON(path.join(__dirname, '../database/accounts.json'), data);
 }
