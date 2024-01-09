@@ -1,8 +1,8 @@
-const { getObj, uploadJSON, getJSON, getObjUser, findElementById } = require('./helper/helper');
+const { getObj, uploadJSON, getJSON, getObjUser, findElementById } = require('../helper/helper');
 const path = require('path');
 // const accountData = getJSON(path.join(__dirname, '../database/accounts.json'));
 
-function displayAssociated(loggedInAccount = getJSON(path.join(__dirname, '../database/accounts.json')).find(account => account.id === parseInt(localStorage.getItem('id'), 10))) {
+function displayAssociated(loggedInAccount = getJSON(path.join(__dirname, '../../database/accounts.json')).find(account => account.id === parseInt(localStorage.getItem('id'), 10))) {
     // Retrieve the logged-in user's ID from localStorage
     const loggedInId = localStorage.getItem('id');
     if (!loggedInAccount) location.href = 'login.html'; // Exit if no account matches
@@ -111,7 +111,7 @@ function saveChanges() {
     //be removed, we dont want that, instead you should check the ids that are there, if the id
     //isnt present, store the id in an array called canceledArr, and if the changes are made, save 
     //the entire object of that into an array called changedArr
-    let accountData = getJSON(path.join(__dirname, '../database/accounts.json'));
+    let accountData = getJSON(path.join(__dirname, '../../database/accounts.json'));
     let changedFilteredArr = [];
     let allUsernames = [];
     let filteredUsernames = [];

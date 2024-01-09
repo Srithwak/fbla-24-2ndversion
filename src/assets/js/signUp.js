@@ -1,4 +1,4 @@
-const { makePartnerAccount, makeSchoolAccount, searchAttribute } = require('./helper/helper');
+const { makePartnerAccount, makeSchoolAccount, searchAttribute } = require('../helper/helper');
 
 function toRun() {
    const username = document.querySelector(".username").value;
@@ -25,5 +25,5 @@ function toRun() {
       makePartnerAccount(username, password1, email);
    else if (school)
       makeSchoolAccount(username, password1, email);
-   location.href = 'login.html';
+   location.href = '../html/login.html';
 }

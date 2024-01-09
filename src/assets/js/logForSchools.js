@@ -1,4 +1,4 @@
-const { getObj } = require('./helper/helper');
+const { getObj } = require('../helper/helper');
 const path = require('path');
 
 /*
@@ -9,10 +9,10 @@ all the changes that can be made:
 */
 
 /*
-Partner added: 
+Partner add: 
     {
         type: "add",
-        schoolId: 0,
+        partnerId: 0,
         money: 0,
         resources: ""
     }
@@ -22,7 +22,7 @@ Partner added:
 Partner removed: 
     {
         type: "remove",
-        schoolId: 0
+        partnerId: 0
     }
 */
 
@@ -30,7 +30,7 @@ Partner removed:
 Change request of something: 
     {
         type: "changeReq",
-        schoolId: 0,
+        partnerId: 0,
         money: 0,
         resources: ""
     }
@@ -40,7 +40,7 @@ Change request of something:
 Change approval:
     {
         type: "changeApp",
-        schoolId: 0,
+        partnerId: 0,
         money: 0,
         resources: ""
     }
@@ -50,7 +50,7 @@ Change approval:
 Partner request: 
     {
         type: "request",
-        schoolId: 0,
+        partnerId: 0,
         notes: ""
     }
 */
@@ -68,15 +68,15 @@ function makeLogTable() { //not tested
     let log = getObj(localStorage.getItem('id')).log;
     for (let entry of log)
         if (entry.type === "request")
-            addItem(`School ${getObj(entry.schoolId).username} has requested to partner up, saying: "${entry.notes}"`);
+            addItem(`Partner ${getObj(entry.partnerId).username} has requested to partner up, saying: "${entry.notes}"`);
         else if (entry.type === "add")
-            addItem(`You added School ${getObj(entry.schoolId).username}. Money: ${entry.money}, Resources: ${entry.resources}`);
+            addItem(`You added partner ${getObj(entry.partnerId).username}. Money: ${entry.money}, Resources: ${entry.resources}`);
         else if (entry.type === "remove")
-            addItem(`School ${getObj(entry.schoolId).username} removed you`);
+            addItem(`You removed ${getObj(entry.partnerId).username}`);
         else if (entry.type === "changeReq")
-            addItem(`Change request for School ${getObj(entry.schoolId).username}. Money: ${entry.money}, Resources: ${entry.resources}`);
+            addItem(`Change request for partner ${getObj(entry.partnerId).username}. Money: ${entry.money}, Resources: ${entry.resources}`);
         else if (entry.type === "changeApp")
-            addItem(`Change approved for School ${getObj(entry.schoolId).username}. Money: ${entry.money}, Resources: ${entry.resources}`);
+            addItem(`Change approved for partner ${getObj(entry.partnerId).username}. Money: ${entry.money}, Resources: ${entry.resources}`);
 }
 
 makeLogTable();

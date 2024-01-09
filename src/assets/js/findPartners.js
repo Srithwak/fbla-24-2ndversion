@@ -1,8 +1,8 @@
-const { getJSON, getObj } = require('./helper/helper');
+const { getJSON, getObj } = require('../helper/helper');
 const path = require('path');
 const userTable = document.getElementById("userTable");
 
-function displayTable(accountData = getJSON(path.join(__dirname, '../database/accounts.json'))) {
+function displayTable(accountData = getJSON(path.join(__dirname, '../../database/accounts.json'))) {
     userTable.innerHTML = "";
     // Check if there are rows in the table
     if (userTable.rows.length === 0) {
@@ -82,7 +82,7 @@ function filter() {
     const phoneFilter = document.getElementById('phoneFilter').value;
     const websiteFilter = document.getElementById('websiteFilter').value.toLowerCase();
 
-    let data = getJSON(path.join(__dirname, '../database/accounts.json'));
+    let data = getJSON(path.join(__dirname, '../../database/accounts.json'));
 
     // Create a new array with filtered elements
     const filteredData = data.filter(userObject => {

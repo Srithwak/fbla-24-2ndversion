@@ -1,10 +1,10 @@
 const assert = require('assert');
-const { getJSON, getObj, uploadJSON, findNextID } = require('./helper/helper');
+const { getJSON, getObj, uploadJSON, findNextID } = require('../helper/helper');
 const path = require('path');
 //getJSON(path.join(__dirname, '../database/accounts.json'))
 
 function populateTable(messages) {
-    let allMessages = getJSON(path.join(__dirname, '../database/messages.json'));
+    let allMessages = getJSON(path.join(__dirname, '../../database/messages.json'));
     if (messages == undefined) {
         messages = [];
         for (i of allMessages)
@@ -124,7 +124,7 @@ function getButtonText(messageType) {
     }
 }
 
-function replaceAccountGivenId(obj, file = path.join(__dirname, '../database/accounts.json')) {
+function replaceAccountGivenId(obj, file = path.join(__dirname, '../../database/accounts.json')) {
     let accounts = getJSON(file);
     for (let i = 0; i < accounts.length; i++) {
         if (accounts[i].id == obj.id) {
@@ -132,13 +132,13 @@ function replaceAccountGivenId(obj, file = path.join(__dirname, '../database/acc
         }
     }
     // console.log(accounts);
-    uploadJSON(path.join(__dirname, '../database/accounts.json'), accounts);
+    uploadJSON(path.join(__dirname, '../../database/accounts.json'), accounts);
 }
 
 function handleAction(buttonType, messageId) {
     // Implement your logic based on the action and message type
-    let accounts = getJSON(path.join(__dirname, '../database/accounts.json'));
-    let allMessages = getJSON(path.join(__dirname, '../database/messages.json'));
+    let accounts = getJSON(path.join(__dirname, '../../database/accounts.json'));
+    let allMessages = getJSON(path.join(__dirname, '../../database/messages.json'));
     let message;
     for (i of allMessages) {
         if (i.id == messageId) {
@@ -176,7 +176,7 @@ function handleAction(buttonType, messageId) {
         for (let i = 0; i < allMessages.length; i++)
             if (allMessages[i].id == message.id)
                 allMessages.splice(i, 1);
-        uploadJSON(path.join(__dirname, '../database/messages.json'), allMessages);
+        uploadJSON(path.join(__dirname, '../../database/messages.json'), allMessages);
         populateTable()
     }
 }

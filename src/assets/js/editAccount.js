@@ -1,4 +1,4 @@
-const { getObj, uploadJSON, getJSON } = require('./helper/helper');
+const { getObj, uploadJSON, getJSON } = require('../helper/helper');
 const path = require('path');
 
 function onLoadRun1() {
@@ -58,7 +58,7 @@ function editAccount() {
     if (input.value != '')
       account.socialMedia.push(input.value);
   });
-  let data = getJSON(path.join(__dirname, '../database/accounts.json'));
+  let data = getJSON(path.join(__dirname, '../../database/accounts.json'));
   for (let i = 0; i < data.length; i++) {
     account.log = data[i].log;
     account.messages = data[i].messages;
@@ -68,5 +68,5 @@ function editAccount() {
   if (data[i].visibility != undefined)
     account.visibility = document.querySelector('.visibility').value;
   data[i] = account;
-  uploadJSON(path.join(__dirname, '../database/accounts.json'), data);
+  uploadJSON(path.join(__dirname, '../../database/accounts.json'), data);
 }

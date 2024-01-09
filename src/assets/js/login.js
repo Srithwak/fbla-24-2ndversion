@@ -1,4 +1,4 @@
-const { getJSON } = require('./helper/helper');
+const { getJSON } = require('../helper/helper');
 const path = require('path');
 function login() {
    const username = document.querySelector('.username').value;
@@ -11,11 +11,11 @@ function login() {
       console.log('password is blank'); //errorPopup
       return;
    }
-   let accounts = getJSON(path.join(__dirname, '../database/accounts.json'));
+   let accounts = getJSON(path.join(__dirname, '../../database/accounts.json'));
    for (i of accounts)
       if (i.username == username && i.password == password) {
          localStorage.setItem("id", JSON.stringify(i.id)); //sets the user object to localStorage
-         location.href = 'associated.html';
+         location.href = '../html/associated.html';
          return;
       }
    console.log('Incorrect username or password'); //errorPopup

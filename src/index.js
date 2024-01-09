@@ -17,7 +17,7 @@ const createWindow = () => {
       title: 'Placeholder'
    });
    if (isDev) win.webContents.openDevTools();
-   win.loadFile(path.join(__dirname, './assets/login.html'));
+   win.loadFile(path.join(__dirname, './assets/html/login.html'));
    // win.loadFile(path.join(__dirname, './assets/signUp.html'));
 }
 

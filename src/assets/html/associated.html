@@ -7,6 +7,17 @@
 </head>
 
 <body class="container">
+   <style>
+   </style>
+   <header>
+      <nav class="nav__wrapper">
+         <div class="nav__left"></div>
+         <div class="nav__right"></div>
+      </nav>
+   </header>
+
+
+
     <table id="gridTable"></table><br><br>
     <input type="text" id="usernameFilter" placeholder="username" onkeyup="filter()"><br>
     <input type="radio" id="less" name="fav_language" value="less" onkeyup = "filter()">
@@ -19,7 +30,7 @@
     <input type="button" id="saveChanges" onclick="saveChanges()" value="save changes">
     <input type="button" id="saveChanges" onclick="displayAssociated()" value="cancel changes"><br><br>
 
-    <script src="associated.js"></script>
+    <script src="../js/associated.js"></script>
 </body>
 
 </html>
