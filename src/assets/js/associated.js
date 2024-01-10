@@ -50,7 +50,7 @@ function displayAssociated(loggedInAccount = getJSON(path.join(__dirname, '../..
         const messageButton = document.createElement('button');
         messageButton.textContent = 'Message';
         messageButton.onclick = function () {
-            row.remove(); // This removes the row from the table
+            pop(username);
         };
         row.insertCell(4).appendChild(messageButton);
     });
@@ -119,29 +119,15 @@ function saveChanges() {
         filteredUsernames.push(getObj(i.id).username);
     for (i of getObj(localStorage.getItem('id')).associated)
         allUsernames.push(getObj(i.id).username);
-    for (i of allUsernames) 
+    for (i of allUsernames)
         if (!filteredUsernames.includes(i))
-            for (p of accountData[findElementById(localStorage.getItem('id'))].associated){
+            for (p of accountData[findElementById(localStorage.getItem('id'))].associated) {
                 if (getObj(p.id).username == i)
                     changedFilteredArr.push(p);
-    }
+            }
     console.log(changedFilteredArr);
 
-    //other associated
-    // let otherchangedFilteredArr = [];
-    // let otherallUsernames = [];
-    // let otherfilteredUsernames = [];
-    // for (let i of filteredAssociatedData)
-    //     otherfilteredUsernames.push(getObj(i.id).username);
-    // for (let i = 0; i < getObj(localStorage.getItem('id')).otherAssociated.length; i++)
-    //     otherallUsernames.push(getObj(localStorage.getItem('id')).otherAssociated[i].username);
-    // for (let i of otherallUsernames) 
-    //     if (!otherfilteredUsernames.includes(i))
-    //         for (let p = 0; p < accountData[findElementById(localStorage.getItem('id'))].otherAssociated.length; p++){
-    //             if (getObj(localStorage.getItem('id')).otherAssociated[p].username == i)
-    //                 otherchangedFilteredArr.push(getObj(localStorage.getItem('id')).otherAssociated[p].username);
-    // }
-    // console.log(otherchangedFilteredArr);
+
 
     for (let i = 0; i < accountData.length; i++) {
         if (accountData[i].id == localStorage.getItem('id')) {
@@ -182,9 +168,35 @@ function filter() {
             i--;
         }
     }
+    for (let i = 0; i < otherAssociated.length; i++) {
+        if (
+            !otherAssociated[i].username.includes(usernameFilter.value) ||
+            !otherAssociated[i].details.includes(notesFilter.value) ||
+            !otherAssociated[i].resources.includes(resourcesFilter.value) ||
+            (selectedValue == 'less' && moneyFilter <= otherAssociated[i].money) || // Use selectedValue for comparison
+            (selectedValue == 'greater' && moneyFilter >= otherAssociated[i].money) // Use selectedValue for comparison
+        ) {
+            otherAssociated.splice(i, 1);
+            i--;
+        }
+    }
     accountData.associated = associated;
     accountData.otherAssociated = otherAssociated;
     displayAssociated(accountData);
+}
+
+function pop(username) {
+    var popup = document.getElementById('myPopup');
+    popup.classList.toggle('show');
+
+}
+
+function message() {
+    document.getElementById("myPopup").style.visibility = "visible";
+}
+
+function closePopup() {
+    document.getElementById("myPopup").style.visibility = "hidden";
 }
 
 displayAssociated();

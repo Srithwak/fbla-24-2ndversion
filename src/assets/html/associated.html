@@ -2,19 +2,64 @@
 <html>
 
 <head>
-    <title>Grid Table with Names</title>
-    <style></style>
+   <title>Grid Table with Names</title>
+   <style>
+      .popup {
+         display: inline-block;
+      }
 
-    <link rel="stylesheet" href="../css/common.css">
+      .popup .popuptext {
+         visibility: hidden;
+         width: 160px;
+         background-color: #b1b1b1;
+         color: #fff;
+         text-align: center;
+         border-radius: 6px;
+         padding: 20px;
+         position: relative;
+         top: 50px;
+         right: 150px;
+      }
+
+      .popup .show {
+         visibility: visible;
+         -webkit-animation: fadeIn 1s;
+         animation: fadeIn 1s;
+      }
+
+      /* Close button style */
+      .close {
+         position: absolute;
+         top: 5px;
+         right: 5px;
+         color: #fff;
+         font-size: 16px;
+         cursor: pointer;
+      }
+   </style>
+   
+
+   <link rel="stylesheet" href="../css/common.css">
 </head>
 
 <body class="container">
    <header>
+      <div style="text-align:center;">
+         <div class="popup">
+            <span class="popuptext" id="myPopup">
+               <span class="close" onclick="closePopup()">&times;</span>
+               Message: <input type="text"/>
+               <input type="button" id="message" onclick="message()" value="Send">
+            </span>
+         </div>
+      </div>
       <nav class="nav__wrapper">
          <div class="nav__left">
             <a href="" class="nav__logo">YEET</a>
          </div>
          <div class="nav__right">
+            <a href="./associated.html" class="nav__link">Associated accounts</a>
+            <a href="./findPartners.html" class="nav__link">Find partners</a>
             <a href="./editAccount.html" class="nav__link">Edit Account</a>
             <a href="./messages.html" class="nav__link">Messages</a>
             <a href="./login.html" class="nav__link">Sign out</a>
@@ -23,19 +68,19 @@
    </header>
 
 
-    <table id="gridTable"></table><br><br>
-    <input type="text" id="usernameFilter" placeholder="username" onkeyup="filter()"><br>
-    <input type="radio" id="less" name="fav_language" value="less" onkeyup = "filter()">
-    <label for="html">less</label><br>
-    <input type="radio" id="greater" name="fav_language" value="greater" onkeyup = "filter()">
-    <label for="css">greater</label><br>
-    <input type="number" id="moneyFilter" placeholder="money" onkeyup="filter()"><br>
-    <input type="text" id="resourcesFilter" placeholder="resources" onkeyup="filter()"><br>
-    <input type="text" id="notesFilter" placeholder="notes" onkeyup="filter()"><br>
-    <input type="button" id="saveChanges" onclick="saveChanges()" value="save changes">
-    <input type="button" id="saveChanges" onclick="displayAssociated()" value="cancel changes"><br><br>
+   <table id="gridTable"></table><br><br>
+   <input type="text" id="usernameFilter" placeholder="username" onkeyup="filter()"><br>
+   <input type="radio" id="less" name="fav_language" value="less" onkeyup="filter()">
+   <label for="html">less</label><br>
+   <input type="radio" id="greater" name="fav_language" value="greater" onkeyup="filter()" checked>
+   <label for="css">greater</label><br>
+   <input type="number" id="moneyFilter" placeholder="money" onkeyup="filter()"><br>
+   <input type="text" id="resourcesFilter" placeholder="resources" onkeyup="filter()"><br>
+   <input type="text" id="notesFilter" placeholder="notes" onkeyup="filter()"><br>
+   <input type="button" id="saveChanges" onclick="saveChanges()" value="save changes">
+   <input type="button" id="saveChanges" onclick="displayAssociated()" value="cancel changes"><br><br>
 
-    <script src="../js/associated.js"></script>
+   <script src="../js/associated.js"></script>
 </body>
 
 </html>
