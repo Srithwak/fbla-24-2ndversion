@@ -15,7 +15,7 @@
 
 
 header {
-   background-color: hotpink;
+   background-color: rgb(0, 0, 0);
    color: white;
 
    /* width: 100%; */
@@ -28,7 +28,7 @@ header {
 }
 
 ::selection {
-   background-color: hotpink;
+   background-color: rgb(255, 140, 0);
    color: white;
 }
 

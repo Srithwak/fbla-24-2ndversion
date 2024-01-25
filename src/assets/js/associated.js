@@ -89,8 +89,11 @@ function displayAssociated(loggedInAccount = getJSON(path.join(__dirname, '../..
         for(let i = 0; i < data.length; i++)
             if(data[i].associated != undefined)
                 for(let p = 0; p < data[i].associated.length; p++)
-                    if(data[i].associated[p].id == loggedInId)
+                    if(data[i].associated[p].id == loggedInId){
+                        let obj = data[i].associated[p];
+                        obj.id = data[i].id;
                         arr.push(data[i].associated[p]);
+                    }
         arr.forEach(assoc => {
             const row = table.insertRow();
             const username = getObj(assoc.id).username; // Retrieve the username using the provided function
