@@ -21,67 +21,110 @@ function displayAssociated(loggedInAccount = getJSON(path.join(__dirname, '../..
         headerCell.textContent = headerText;
     });
     // Function to add rows to the table for 'associated'
-    loggedInAccount.associated.forEach(assoc => {
-        const row = table.insertRow();
-        const username = getObj(assoc.id).username; // Retrieve the username using the provided function
+    if (loggedInAccount.associated != undefined) {
+        loggedInAccount.associated.forEach(assoc => {
+            const row = table.insertRow();
+            const username = getObj(assoc.id).username; // Retrieve the username using the provided function
 
-        // Insert editable cells for username, money, resources, and details
-        row.insertCell(0).textContent = username;
-        const moneyCell = row.insertCell(1);
-        moneyCell.contentEditable = true;
-        moneyCell.textContent = assoc.money;
+            // Insert editable cells for username, money, resources, and details
+            row.insertCell(0).textContent = username;
+            const moneyCell = row.insertCell(1);
+            moneyCell.contentEditable = true;
+            moneyCell.textContent = assoc.money;
 
-        const resourcesCell = row.insertCell(2);
-        resourcesCell.contentEditable = true;
-        resourcesCell.textContent = assoc.resources;
+            const resourcesCell = row.insertCell(2);
+            resourcesCell.contentEditable = true;
+            resourcesCell.textContent = assoc.resources;
 
-        const detailsCell = row.insertCell(3);
-        detailsCell.contentEditable = true;
-        detailsCell.textContent = assoc.details;
+            const detailsCell = row.insertCell(3);
+            detailsCell.contentEditable = true;
+            detailsCell.textContent = assoc.details;
 
-        // Create a delete button and insert it into the fifth cell
-        const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Cancel Partnership';
-        deleteButton.onclick = function () {
-            row.remove(); // This removes the row from the table
-        };
-        row.insertCell(4).appendChild(deleteButton);
+            // Create a delete button and insert it into the fifth cell
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Cancel Partnership';
+            deleteButton.onclick = function () {
+                row.remove(); // This removes the row from the table
+            };
+            row.insertCell(4).appendChild(deleteButton);
 
-        const messageButton = document.createElement('button');
-        messageButton.textContent = 'Message';
-        messageButton.onclick = function () {
-            pop(username);
-        };
-        row.insertCell(4).appendChild(messageButton);
-    });
+            const messageButton = document.createElement('button');
+            messageButton.textContent = 'Message';
+            messageButton.onclick = function () {
+                pop(username);
+            };
+            row.insertCell(4).appendChild(messageButton);
+        });
 
-    // Function to add rows to the table for 'otherAssociated'
-    loggedInAccount.otherAssociated.forEach(assoc => {
-        const row = table.insertRow();
+        // Function to add rows to the table for 'otherAssociated'
+        loggedInAccount.otherAssociated.forEach(assoc => {
+            const row = table.insertRow();
 
-        // Insert editable cells for username (with note), money, resources, and details
-        row.insertCell(0).textContent = `${assoc.username} (account not listed)`;
-        const moneyCell = row.insertCell(1);
-        moneyCell.contentEditable = true;
-        moneyCell.textContent = assoc.money;
+            // Insert editable cells for username (with note), money, resources, and details
+            row.insertCell(0).textContent = `${assoc.username} (account not listed)`;
+            const moneyCell = row.insertCell(1);
+            moneyCell.contentEditable = true;
+            moneyCell.textContent = assoc.money;
 
-        const resourcesCell = row.insertCell(2);
-        resourcesCell.contentEditable = true;
-        resourcesCell.textContent = assoc.resources;
+            const resourcesCell = row.insertCell(2);
+            resourcesCell.contentEditable = true;
+            resourcesCell.textContent = assoc.resources;
 
-        const detailsCell = row.insertCell(3);
-        detailsCell.contentEditable = true;
-        detailsCell.textContent = assoc.details;
+            const detailsCell = row.insertCell(3);
+            detailsCell.contentEditable = true;
+            detailsCell.textContent = assoc.details;
 
-        // Create a delete button and insert it into the fifth cell
-        const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Cancel Partnership';
-        deleteButton.onclick = function () {
-            row.remove(); // This removes the row from the table
+            // Create a delete button and insert it into the fifth cell
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Cancel Partnership';
+            deleteButton.onclick = function () {
+                row.remove(); // This removes the row from the table
 
-        };
-        row.insertCell(4).appendChild(deleteButton);
-    });
+            };
+            row.insertCell(4).appendChild(deleteButton);
+        });
+    } else {
+        let arr = [];
+        let data = getJSON(path.join(__dirname, '../../database/accounts.json'));
+        for(let i = 0; i < data.length; i++)
+            if(data[i].associated != undefined)
+                for(let p = 0; p < data[i].associated.length; p++)
+                    if(data[i].associated[p].id == loggedInId)
+                        arr.push(data[i].associated[p]);
+        arr.forEach(assoc => {
+            const row = table.insertRow();
+            const username = getObj(assoc.id).username; // Retrieve the username using the provided function
+
+            // Insert editable cells for username, money, resources, and details
+            row.insertCell(0).textContent = username;
+            const moneyCell = row.insertCell(1);
+            moneyCell.contentEditable = true;
+            moneyCell.textContent = assoc.money;
+
+            const resourcesCell = row.insertCell(2);
+            resourcesCell.contentEditable = true;
+            resourcesCell.textContent = assoc.resources;
+
+            const detailsCell = row.insertCell(3);
+            detailsCell.contentEditable = true;
+            detailsCell.textContent = assoc.details;
+
+            // Create a delete button and insert it into the fifth cell
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Cancel Partnership';
+            deleteButton.onclick = function () {
+                row.remove(); // This removes the row from the table
+            };
+            row.insertCell(4).appendChild(deleteButton);
+
+            const messageButton = document.createElement('button');
+            messageButton.textContent = 'Message';
+            messageButton.onclick = function () {
+                pop(username);
+            };
+            row.insertCell(4).appendChild(messageButton);
+        });
+    }
 }
 
 function saveChanges() {
