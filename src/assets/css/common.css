@@ -13,8 +13,10 @@
 
 
 
+
 header {
-   background-color: #ddd;
+   background-color: hotpink;
+   color: white;
 
    /* width: 100%; */
    padding: 1rem;
@@ -25,10 +27,17 @@ header {
    z-index: 1;
 }
 
+::selection {
+   background-color: hotpink;
+   color: white;
+}
+
 .nav__wrapper {
    display: flex;
    align-items: center;
    justify-content: space-between;
+
+   color: white;
 }
 
 .nav__left,
@@ -41,7 +50,7 @@ header {
 .nav__logo,
 .nav__link {
    text-decoration: none;
-   color: black;
+   color: white;
 }
 
 .nav__logo {

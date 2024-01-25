@@ -11,6 +11,10 @@
    <style>
       body {
          background-color: hotpink;
+         /* color: white; */
+      }
+      ::placeholder {
+         color: black;
       }
       .login__form {
          position: fixed;
@@ -22,81 +26,31 @@
          flex-direction: column;
          align-items: center;
          gap: 1rem;
-         padding: 2rem;
+         padding: 4rem;
+         border-radius: 2rem;
+         /* border: 2px solid white; */
       }
-
-      input[type=text] {
-         /* padding: 1rem;
-         outline: none;
-         border: none; */
-         background: linear-gradient(90deg, rgba(14,0,255,1) 0%, rgba(113,121,9,1) 11%, rgba(8,139,47,1) 23%, rgba(162,6,6,1) 38%, rgba(174,5,182,1) 51%, rgba(3,179,204,1) 66%, rgba(219,2,2,1) 76%, rgba(198,1,236,1) 87%, rgba(0,255,115,1) 100%);
-         padding: 1rem;
-         color: white;
-         font-size: 2rem;
-         font-weight: 700;
-      }
-
+      input[type=text],
       input[type=password] {
-         /* padding: 1rem;
-         outline: none;
-         border: none; */
-         background: linear-gradient(90deg, rgba(14,0,255,1) 0%, rgba(113,121,9,1) 11%, rgba(8,139,47,1) 23%, rgba(162,6,6,1) 38%, rgba(174,5,182,1) 51%, rgba(3,179,204,1) 66%, rgba(219,2,2,1) 76%, rgba(198,1,236,1) 87%, rgba(0,255,115,1) 100%);
          padding: 1rem;
+         width: 100%;
+         border-radius: 1rem;
+         border: none;
+         outline: none;
+         background-color: white;
+         /* color: white; */
+         font-size: 1.5rem;
+      }
+      input[type=button] {
+         width: 100%;
+         font-size: 1.5rem;
+         padding: 1rem;
+         border-radius: 1rem;
+         outline: none;
+         border: none;
+         background-color: hotpink;
          color: white;
-         font-size: 2rem;
-         font-weight: 700;
       }
-
-      *::placeholder {
-         color: black;
-      }
-
-
-
-
-      /* <!-- HTML !-->
-<button class="button-55" role="button">Button 55</button> */
-
-/* CSS */
-.button-55 {
-  align-self: center;
-  background-color: #fff;
-  background-image: none;
-  background-position: 0 90%;
-  background-repeat: repeat no-repeat;
-  background-size: 4px 3px;
-  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
-  border-style: solid;
-  border-width: 2px;
-  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
-  box-sizing: border-box;
-  color: #41403e;
-  cursor: pointer;
-  display: inline-block;
-  font-family: Neucha, sans-serif;
-  font-size: 1rem;
-  line-height: 23px;
-  outline: none;
-  padding: .75rem;
-  text-decoration: none;
-  transition: all 235ms ease-in-out;
-  border-bottom-left-radius: 15px 255px;
-  border-bottom-right-radius: 225px 15px;
-  border-top-left-radius: 255px 15px;
-  border-top-right-radius: 15px 225px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.button-55:hover {
-  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
-  transform: translate3d(0, 2px, 0);
-}
-
-.button-55:focus {
-  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
-}
    </style>
 </head>
 
