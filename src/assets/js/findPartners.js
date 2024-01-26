@@ -74,8 +74,56 @@ function displayTable(accountData = getJSON(path.join(__dirname, '../../database
                 else
                     actionCell.appendChild(newDeleteButton);
             }
-            else {
-                //do it for partners here
+            else { //not done tho fix it rn its just copy pasted
+                const newRow = userTable.insertRow();
+                const usernameCell = newRow.insertCell(0);
+                const descriptionCell = newRow.insertCell(1);
+                const emailCell = newRow.insertCell(2);
+                const phoneCell = newRow.insertCell(3);
+                const websiteCell = newRow.insertCell(4);
+                const socialMediaCell = newRow.insertCell(5);
+                const actionCell = newRow.insertCell(6);
+
+                // Populate cells with user information
+                let arr1 = [];
+                for (i of getObj(localStorage.getItem('id')).associated)
+                    arr1.push(i.id);
+                if (arr1.includes(userObject.id))
+                    usernameCell.innerText = userObject.username + " (Associated Partner)";
+                else
+                    usernameCell.innerText = userObject.username;
+                descriptionCell.innerText = userObject.description;
+                emailCell.innerText = userObject.email;
+                phoneCell.innerText = userObject.phone;
+                websiteCell.innerText = userObject.website;
+                socialMediaCell.innerText = userObject.socialMedia.join(', ');
+                console.log(arr1);
+
+                // Create a button
+                const newButton = document.createElement('button');
+                newButton.textContent = 'Send partner request';
+
+                // Use a closure to capture the correct userObject for each iteration
+                newButton.addEventListener('click', (function (userId) {
+                    return function () {
+                        // Call the addPartner function and pass the user's id number
+                        addPartner(userId);
+                    };
+                })(userObject.id));
+
+                const newDeleteButton = document.createElement('button');
+                newDeleteButton.textContent = 'Remove partner request';
+                newDeleteButton.addEventListener('click', (function (userId) {
+                    return function () {
+                        // Call the addPartner function and pass the user's id number
+                        deletePartner(userId);
+                    };
+                })(userObject.id));
+                // Append the button to the action cell
+                if (!arr1.includes(userObject.id))
+                    actionCell.appendChild(newButton);
+                else
+                    actionCell.appendChild(newDeleteButton);
             }
     }
 }
@@ -96,7 +144,6 @@ function filter() {
         const emailMatch = userObject.email.toLowerCase().includes(emailFilter);
         const websiteMatch = userObject.website.toLowerCase().includes(websiteFilter);
         const phoneMatch = userObject.phone.toString().includes(phoneFilter);
-
         return usernameMatch && descriptionMatch && emailMatch && websiteMatch && phoneMatch;
     });
 

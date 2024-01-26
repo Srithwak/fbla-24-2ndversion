@@ -234,7 +234,6 @@ function filter() {
 function pop(username) {
     var popup = document.getElementById('myPopup');
     popup.classList.toggle('show');
-
 }
 
 function message() {

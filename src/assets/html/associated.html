@@ -4,9 +4,10 @@
 <head>
    <title>Grid Table with Names</title>
    <style>
-      /* body {
-         /* background-color: deeppink; */
-      /* } */ 
+      body {
+         background-color: #ccc;
+      }
+
       .popup {
          display: inline-block;
       }
@@ -43,8 +44,135 @@
       #gridTable {
          width: 100%;
       }
+
+      .wrap {
+         display: flex;
+         justify-content: space-between;
+      }
+
+      input[type=text],
+      input[type=password] {
+         padding: .5rem;
+         width: 100%;
+         border-radius: 1rem;
+         border: none;
+         outline: none;
+         background-color: white;
+         /* color: white; */
+         font-size: 1.5rem;
+      }
+
+      input[type=number] {
+         padding: .5rem;
+         width: 100%;
+         border-radius: 1rem;
+         border: none;
+         outline: none;
+         background-color: white;
+         /* color: white; */
+         font-size: 1.5rem;
+      }
+
+      input[type=button] {
+         width: 100%;
+         font-size: 1.5rem;
+         padding: 1rem;
+         border-radius: 1rem;
+         outline: none;
+         border: none;
+         background-color: hotpink;
+         color: white;
+      }
+
+      .right,
+      .left {
+         padding: 2rem;
+      }
+
+      .left {
+         display: flex;
+         flex-direction: column;
+         gap: 2rem;
+      }
+
+      input[type=radio] {
+         width: 2rem;
+         height: 2rem;
+      }
+
+      label {
+         font-size: 2rem;
+      }
+      #gridTable {
+   border-collapse: collapse;
+   width: 200%; /* Adjust the width as needed */
+   margin-top: 20px;
+   margin-left: -115%; /* Adjust the left margin as needed */
+}
+
+#gridTable th,
+#gridTable td {
+   border: 1px solid #ddd;
+   padding: 8px; /* Adjust the padding as needed */
+   text-align: left;
+}
+
+#gridTable th {
+   background-color: #333;
+   color: white;
+}
+
+#gridTable tr:hover {
+   background-color: #f5f5f5;
+}
+
+/* Responsive Table Styling */
+@media screen and (max-width: 600px) {
+   #gridTable {
+      border: 1px solid #ddd;
+   }
+
+   #gridTable thead,
+   #gridTable tbody,
+   #gridTable th,
+   #gridTable td,
+   #gridTable tr {
+      display: block;
+   }
+
+   #gridTable thead {
+      display: none;
+   }
+
+   #gridTable tr {
+      margin-bottom: 15px;
+   }
+
+   #gridTable td {
+      border: none;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+      padding-left: 50%;
+   }
+
+   #gridTable td:before {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+   }
+
+   #gridTable td:nth-of-type(1):before {
+      content: "Username:";
+   }
+
+   #gridTable td:nth-of-type(2):before {
+      content: "Column 2:";
+   }
+}
    </style>
-   
 
    <link rel="stylesheet" href="../css/common.css">
 </head>
@@ -73,19 +201,36 @@
          </div>
       </nav>
    </header>
+   <div class="wrap">
+      <div class="left">
+         <input type="text" id="usernameFilter" placeholder="username" onkeyup="filter()">
 
-   <table id="gridTable"></table><br><br>
-   <input type="text" id="usernameFilter" placeholder="username" onkeyup="filter()"><br>
-   <input type="radio" id="less" name="fav_language" value="less" onkeyup="filter()">
-   <label for="html">less</label><br>
-   <input type="radio" id="greater" name="fav_language" value="greater" onkeyup="filter()" checked>
-   <label for="css">greater</label><br>
-   <input type="number" id="moneyFilter" placeholder="money" onkeyup="filter()"><br>
-   <input type="text" id="resourcesFilter" placeholder="resources" onkeyup="filter()"><br>
-   <input type="text" id="notesFilter" placeholder="notes" onkeyup="filter()"><br>
-   <input type="button" id="saveChanges" onclick="saveChanges()" value="save changes">
-   <input type="button" id="saveChanges" onclick="displayAssociated()" value="cancel changes"><br><br>
+         <div class="line">
+            <input type="radio" id="less" name="fav_language" value="less" onkeyup="filter()">
+            <label for="html">less</label>
 
+         </div>
+
+         <div class="line">
+            <input type="radio" id="greater" name="fav_language" value="greater" onkeyup="filter()" checked>
+            <label for="css">greater</label><br><br>
+            <input type="number" id="moneyFilter" placeholder="money" onkeyup="filter()">
+         </div>
+         <input type="text" id="resourcesFilter" placeholder="resources" onkeyup="filter()">
+         <input type="text" id="notesFilter" placeholder="notes" onkeyup="filter()">
+         <input type="button" id="saveChanges" onclick="saveChanges()" value="save changes">
+         <input type="button" id="saveChanges" onclick="displayAssociated()" value="cancel changes">
+      </div>
+
+      <div class="right">
+         <div class="table-wrapper">
+            <div class="fl-table">
+               <table id="gridTable"></table>
+            </div>
+         </div>
+
+      </div>
+   </div>
    <script src="../js/associated.js"></script>
 </body>
 
