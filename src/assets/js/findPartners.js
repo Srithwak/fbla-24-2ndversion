@@ -1,4 +1,4 @@
-const { getJSON, getObj } = require('../helper/helper');
+const { getJSON, getObj, findNextID, uploadJSON} = require('../helper/helper');
 const path = require('path');
 const userTable = document.getElementById("userTable");
 
@@ -17,9 +17,9 @@ function displayTable(accountData = getJSON(path.join(__dirname, '../../database
             headerRow.appendChild(headerCell);
         }
     }
-    for (userObject of accountData) {
-        if (userObject.associated == undefined)
-            if (userObject.visibility == 'public') {
+    if (getObj(localStorage.getItem('id')).associated != undefined)
+        for (userObject of accountData) {
+            if (userObject.associated == undefined && userObject.visibility == 'public') {
                 // Create a new row
                 const newRow = userTable.insertRow();
 
@@ -34,18 +34,19 @@ function displayTable(accountData = getJSON(path.join(__dirname, '../../database
 
                 // Populate cells with user information
                 let arr1 = [];
-                for (i of getObj(localStorage.getItem('id')).associated)
-                    arr1.push(i.id);
-                if (arr1.includes(userObject.id))
-                    usernameCell.innerText = userObject.username + " (Associated Partner)";
-                else
-                    usernameCell.innerText = userObject.username;
+                if (getObj(localStorage.getItem('id')).associated != undefined) {
+                    for (i of getObj(localStorage.getItem('id')).associated)
+                        arr1.push(i.id);
+                    if (arr1.includes(userObject.id))
+                        usernameCell.innerText = userObject.username + " (Associated Partner)";
+                    else
+                        usernameCell.innerText = userObject.username;
+                }
                 descriptionCell.innerText = userObject.description;
                 emailCell.innerText = userObject.email;
                 phoneCell.innerText = userObject.phone;
                 websiteCell.innerText = userObject.website;
                 socialMediaCell.innerText = userObject.socialMedia.join(', ');
-                console.log(arr1);
 
                 // Create a button
                 const newButton = document.createElement('button');
@@ -74,7 +75,16 @@ function displayTable(accountData = getJSON(path.join(__dirname, '../../database
                 else
                     actionCell.appendChild(newDeleteButton);
             }
-            else { //not done tho fix it rn its just copy pasted
+        }
+    else {
+        let arr1 = [];
+        for (userObject of accountData)
+            if (userObject.associated != undefined)
+                for (i of userObject.associated)
+                    if (i.id == localStorage.getItem('id'))
+                        arr1.push(userObject.id);
+        for (userObject of accountData)
+            if (userObject.associated != undefined) {
                 const newRow = userTable.insertRow();
                 const usernameCell = newRow.insertCell(0);
                 const descriptionCell = newRow.insertCell(1);
@@ -83,22 +93,12 @@ function displayTable(accountData = getJSON(path.join(__dirname, '../../database
                 const websiteCell = newRow.insertCell(4);
                 const socialMediaCell = newRow.insertCell(5);
                 const actionCell = newRow.insertCell(6);
-
-                // Populate cells with user information
-                let arr1 = [];
-                for (i of getObj(localStorage.getItem('id')).associated)
-                    arr1.push(i.id);
-                if (arr1.includes(userObject.id))
-                    usernameCell.innerText = userObject.username + " (Associated Partner)";
-                else
-                    usernameCell.innerText = userObject.username;
+                usernameCell.innerText = userObject.username;
                 descriptionCell.innerText = userObject.description;
                 emailCell.innerText = userObject.email;
                 phoneCell.innerText = userObject.phone;
                 websiteCell.innerText = userObject.website;
                 socialMediaCell.innerText = userObject.socialMedia.join(', ');
-                console.log(arr1);
-
                 // Create a button
                 const newButton = document.createElement('button');
                 newButton.textContent = 'Send partner request';
@@ -119,6 +119,7 @@ function displayTable(accountData = getJSON(path.join(__dirname, '../../database
                         deletePartner(userId);
                     };
                 })(userObject.id));
+
                 // Append the button to the action cell
                 if (!arr1.includes(userObject.id))
                     actionCell.appendChild(newButton);
@@ -152,8 +153,19 @@ function filter() {
 
 function addPartner(userId) {
     // Do something with the userId, for example, log it to the console
-    console.log(`Partner ${getObj(userId).username} requested for ${getObj(localStorage.getItem('id')).username}`);
+    // console.log(`Partner ${getObj(userId).username} requested for ${getObj(localStorage.getItem('id')).username}`);
     // send a message to the partner
+    let obj = {
+        "id": findNextID(path.join(__dirname, '../../database/messages.json')),
+        "fromId": (getObj(localStorage.getItem('id')).id),
+        "toId": userId,
+        "type": "affiliateApproval",
+        "notes": "",
+        "hashKey": ""
+    };
+    let data = getJSON(path.join(__dirname, '../../database/messages.json'));
+    data.push(obj);
+    uploadJSON(path.join(__dirname, '../../database/messages.json'), data);
 }
 
 function deletePartner(userId) {

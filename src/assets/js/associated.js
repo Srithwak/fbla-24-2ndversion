@@ -146,7 +146,7 @@ function saveChanges() {
             });
         } else {
             filteredOtherAssociatedData.push({
-                username: cells[0].textContent.replace('(account not listed)', ''),
+                username: cells[0].textContent.replace('(account not listed)'),
                 money: parseInt(cells[1].textContent),
                 resources: cells[2].textContent,
                 details: cells[3].textContent

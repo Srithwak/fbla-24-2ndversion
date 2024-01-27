@@ -3,7 +3,7 @@
     "id": 0,
     "username": "name1",
     "password": "pwd1",
-    "description": "",
+    "description": "s",
     "email": "pop@gmail.com",
     "phone": 8888888888,
     "website": "",
@@ -50,7 +50,7 @@
     "website": "sth.com",
     "messages": [],
     "socialMedia": [],
-    "description": "",
+    "description": "p",
     "log": [],
     "associated": [
       {
@@ -91,11 +91,11 @@
     "website": "sth3.com",
     "messages": [],
     "socialMedia": [],
-    "description": "",
+    "description": "q",
     "log": [],
     "associated": [
       {
-        "id": 0,
+        "id": 3,
         "money": 20,
         "resources": "test2",
         "details": "trash79"
