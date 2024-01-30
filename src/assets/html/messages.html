@@ -11,7 +11,11 @@
          width: 100%;
       }
 
-      table,
+      body {
+         background-color: #111;
+      }
+
+      /* table,
       th,
       td {
          border: 1px solid black;
@@ -21,21 +25,75 @@
       td {
          padding: 10px;
          text-align: left;
+      } */
+
+      input[type=button] {
+         width: 100%;
+         font-size: 1rem;
+         padding: .425rem;
+         /* border-radius: 1rem; */
+         outline: none;
+         border: none;
+         background-color: #ffa31a;
+         color: white;
+      }
+
+      button {
+         /* width: 100%; */
+         font-size: 1rem;
+         padding: .425rem;
+         /* border-radius: 1rem; */
+         outline: none;
+         border: none;
+         background-color: #fff;
+         color: black;
+
+      }
+
+      table {
+         border-collapse: collapse;
+         width: 100%;
+         color: white;
+         /* margin-top: 20px; */
+         /* margin-left: -115%; */
+      }
+
+      table th,
+      table td {
+         border: 1px solid #ddd;
+         padding: 8px;
+         /* Adjust the padding as needed */
+         text-align: left;
+      }
+
+      table th {
+         background-color: #ffa31a;
+         color: white;
+      }
+
+      table tr:hover {
+         background-color: #ffa31a;
+      }
+
+      .table_head {
+         background-color: #ffa31a;
+         color: white;
+         font-size: 900;
       }
    </style>
 
-<link rel="stylesheet" href="../css/common.css">
+   <link rel="stylesheet" href="../css/common.css">
 </head>
 
 <body>
    <header>
       <nav class="nav__wrapper">
          <div class="nav__left">
-            <a href="" class="nav__logo">YEET</a>
+            <a href="" class="nav__logo">CREAMPIE</a>
          </div>
          <div class="nav__right">
             <a href="./associated.html" class="nav__link">Associated accounts</a>
-            <a href="./findPartners.html" class="nav__link">Find partners</a>
+            <a href="./findPartners.html" class="nav__link">Find Partners</a>
             <a href="./editAccount.html" class="nav__link">Edit Account</a>
             <a href="./messages.html" class="nav__link">Messages</a>
             <a href="./login.html" class="nav__link">Sign out</a>

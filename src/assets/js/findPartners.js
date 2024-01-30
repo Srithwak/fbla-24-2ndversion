@@ -1,6 +1,6 @@
 const { getJSON, getObj, findNextID, uploadJSON} = require('../helper/helper');
 const path = require('path');
-const userTable = document.getElementById("userTable");
+const userTable = document.getElementById("gridTable");
 
 function displayTable(accountData = getJSON(path.join(__dirname, '../../database/accounts.json'))) {
     userTable.innerHTML = "";
@@ -28,7 +28,7 @@ function displayTable(accountData = getJSON(path.join(__dirname, '../../database
                 const descriptionCell = newRow.insertCell(1);
                 const emailCell = newRow.insertCell(2);
                 const phoneCell = newRow.insertCell(3);
-                const websiteCell = newRow.insertCell(4);
+                const websiteCell = newRow.insertCell(4);zZ
                 const socialMediaCell = newRow.insertCell(5);
                 const actionCell = newRow.insertCell(6);
 

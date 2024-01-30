@@ -8,11 +8,60 @@
    <link rel="stylesheet" href="../css/common.css">
 
    <style>
+      html,
+      body {
+         height: 100vh;
+      }
       .center {
-         height: calc(100vh- 4rem);
+         height: calc(100vh - 4rem);
          display: flex;
          justify-content: space-around;
       }
+      .cum {
+         display: flex;
+         flex-direction: column;
+         justify-content: space-around;
+      }.creampiie {
+         background-color: bisque;
+         padding:1rem;
+      }
+      input[type=text],
+      input[type=password] {
+         padding: .25rem;
+         width: 100%;
+         /* border-radius: .5rem; */
+         border: none;
+         outline: none;
+         background-color: white;
+         /* color: white; */
+         font-size: 1rem;
+         line-height: normal;
+
+         color: black;
+      }
+      input[type=button] {
+         width: 100%;
+         font-size: 1rem;
+         padding: .425rem;
+         /* border-radius: 1rem; */
+         outline: none;
+         border: none;
+         background-color: #ffa31a;
+         color: white;
+      }
+      button {
+         /* width: 100%; */
+         font-size: 1rem;
+         padding: .425rem;
+         /* border-radius: 1rem; */
+         outline: none;
+         border: none;
+         background-color: #fff;
+         color: black;
+
+      }
+
+      
    </style>
 </head>
 
@@ -35,37 +84,38 @@
 
    <div class="center">
       <div class="cum">
+         <div class="creampiie">
+            <!-- <label>Username:</label> -->
+            <input type="text" class="username" placeholder="Username"><br><br>
 
-         <!-- <label>Username:</label> -->
-         <input type="text" class="username" placeholder="Username"><br><br>
+            <!-- <label>Password:</label> -->
+            <input type="password" class="password" placeholder="Password" required><br><br>
 
-         <!-- <label>Password:</label> -->
-         <input type="password" class="password" placeholder="Password" required><br><br>
+            <!-- <label>Email:</label> -->
+            <input type="email" class="email" placeholder="Email" required><br><br>
 
-         <!-- <label>Email:</label> -->
-         <input type="email" class="email" placeholder="Email" required><br><br>
+            <!-- <label>Description:</label> -->
+            <textarea class="description" placeholder="Decription" required></textarea><br><br>
 
-         <!-- <label>Description:</label> -->
-         <textarea class="description" placeholder="Decription" required></textarea><br><br>
+            <!-- <label>Website:</label> -->
+            <input type="text" class="website" placeholder="Website" required><br><br>
 
-         <!-- <label>Website:</label> -->
-         <input type="text" class="website" placeholder="Website" required><br><br>
+            <!-- <label>Phone:</label> -->
+            <input type="text" class="phone" placeholder="Phone" required><br><br>
 
-         <!-- <label>Phone:</label> -->
-         <input type="text" class="phone" placeholder="Phone" required><br><br>
+            <!-- <label>Visibility:</label> -->
+            <input type="text" class="visibility" placeholder="Visibility" required><br><br>
 
-         <!-- <label>Visibility:</label> -->
-         <input type="text" class="visibility" placeholder="Visibility" required><br><br>
-
-         <div class="socialMediaContainer">
-            <label>Social Media:</label>
-            <div class="socialMediaInputs">
+            <div class="socialMediaContainer">
+               <label>Social Media:</label>
+               <div class="socialMediaInputs">
+               </div>
+               <input type="button" value="Add Social Media" onclick="addSocialMedia()">
             </div>
-            <input type="button" value="Add Social Media" onclick="addSocialMedia()">
-         </div>
 
-         <button onclick="editAccount()">Save changes</button>
-         <button onclick="onLoadRun1()">Cancel changes</button>
+            <button onclick="editAccount()">Save changes</button>
+            <button onclick="onLoadRun1()">Cancel changes</button>
+         </div>
       </div>
    </div>
 

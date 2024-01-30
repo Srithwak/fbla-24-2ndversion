@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Information</title>
-    <style>
+    <!-- <style>
         table {
             border-collapse: collapse;
             width: 80%;
@@ -18,52 +19,337 @@
         th {
             background-color: #f2f2f2;
         }
-    </style>
+    </style> -->
+    <style>
+        body {
+           background-color: #111;
+        }
+  
+        .popup {
+           display: inline-block;
+        }
+  
+        ::placeholder {
+           color: #777;
+        }
+  
+        .popup .popuptext {
+           visibility: hidden;
+           width: 160px;
+           background-color: #ff8000;
+           color: #fff;
+           text-align: center;
+           border-radius: 6px;
+           padding: 20px;
+           position: relative;
+           top: 50px;
+           right: 150px;
+        }
+  
+        .popup .show {
+           visibility: visible;
+           -webkit-animation: fadeIn 1s;
+           animation: fadeIn 1s;
+        }
+  
+        /* Close button style */
+        .close {
+           position: absolute;
+           top: 5px;
+           right: 5px;
+           color: #fff;
+           font-size: 16px;
+           cursor: pointer;
+        }
+  
+        /* #gridTable {
+           width: 100%;
+        } */
+  
+        .wrap {
+           display: flex;
+           justify-content: space-between;
+        }
+  
+        input[type=text],
+        input[type=password] {
+           padding: .25rem;
+           width: 100%;
+           /* border-radius: .5rem; */
+           border: none;
+           outline: none;
+           background-color: white;
+           /* color: white; */
+           font-size: 1rem;
+           line-height: normal;
+  
+           color: black;
+        }
+  
+        input[type=number] {
+           padding: .25rem;
+           width: 100%;
+           /* border-radius: .5rem; */
+           border: none;
+           outline: none;
+           background-color: white;
+           /* color: white; */
+           line-height: normal;
+           color: black;
+           font-size: 1rem;
+        }
+  
+        input[type=button] {
+           width: 100%;
+           font-size: 1rem;
+           padding: .425rem;
+           /* border-radius: 1rem; */
+           outline: none;
+           border: none;
+           background-color: #ffa31a;
+           color: white;
+        }
+  button {
+           /* width: 100%; */
+           font-size: 1rem;
+           padding: .425rem;
+           /* border-radius: 1rem; */
+           outline: none;
+           border: none;
+           background-color: #fff;
+           color: black;
+  
+  }
+        .right,
+        .left {
+           padding: 2rem;
+        } 
+        .right {
+           width: 80%;
+        }
+  
+        .left {
+           display: flex;
+           flex-direction: column;
+           gap: .5rem;
+           width: 20%;
+        }
+  
+        .line {
+           display: flex;
+           align-items: center;
+           gap: .25rem;
+        }
+  
+        /* input[type=radio] {
+           width: 2rem;
+           height: 2rem;
+        } */
+  
+        label {
+           /* font-size: 2rem; */
+           color: white;
+        }
+        #gridTable {
+     border-collapse: collapse;
+     width: 100%;
+     color: white;
+     /* margin-top: 20px; */
+     /* margin-left: -115%; */
+  }
+  
+  #gridTable th,
+  #gridTable td {
+     border: 1px solid #ddd;
+     padding: 8px; /* Adjust the padding as needed */
+     text-align: left;
+  }
+  
+  #gridTable th {
+     background-color: #333;
+     color: white;
+  }
+  
+  #gridTable tr:hover {
+     background-color: #ffa31a;
+  }
+  
+  tr:first-child {
+     background-color: #ffa31a;
+     color: white;
+     font-size: 900;
+  }
+  
+  /* Responsive Table Styling */
+  /* @media screen and (max-width: 600px) {
+     #gridTable {
+        border: 1px solid #ddd;
+     }
+  
+     #gridTable thead,
+     #gridTable tbody,
+     #gridTable th,
+     #gridTable td,
+     #gridTable tr {
+        display: block;
+     }
+  
+     #gridTable thead {
+        display: none;
+     }
+  
+     #gridTable tr {
+        margin-bottom: 15px;
+     }
+  
+     #gridTable td {
+        border: none;
+        border-bottom: 1px solid #ddd;
+        position: relative;
+        padding-left: 50%;
+     }
+  
+     #gridTable td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+     }
+  
+     #gridTable td:nth-of-type(1):before {
+        content: "Username:";
+     }
+  
+     #gridTable td:nth-of-type(2):before {
+        content: "Column 2:";
+     }
+  } */
+     </style>
 
-<link rel="stylesheet" href="../css/common.css">
+
+    <link rel="stylesheet" href="../css/common.css">
 </head>
+
 <body>
-   <header>
-      <nav class="nav__wrapper">
-         <div class="nav__left">
-            <a href="" class="nav__logo">YEET</a>
-         </div>
-         <div class="nav__right">
-            <a href="./associated.html" class="nav__link">Associated accounts</a>
-            <a href="./findPartners.html" class="nav__link">Find partners</a>
-            <a href="./editAccount.html" class="nav__link">Edit Account</a>
-            <a href="./messages.html" class="nav__link">Messages</a>
-            <a href="./login.html" class="nav__link">Sign out</a>
-         </div>
-      </nav>
-   </header>
+    <header>
+        <nav class="nav__wrapper">
+            <div class="nav__left">
+                <a href="" class="nav__logo">BALLS</a>
+            </div>
+            <div class="nav__right">
+                <a href="./associated.html" class="nav__link">Associated accounts</a>
+                <a href="./findPartners.html" class="nav__link">Find Partners</a>
+                <a href="./editAccount.html" class="nav__link">Edit Account</a>
+                <a href="./messages.html" class="nav__link">Messages</a>
+                <a href="./login.html" class="nav__link">Sign out</a>
+            </div>
+        </nav>
+
+        <style>
+
+
+            .wrap {
+         display: flex;
+         /* justify-content: space-between; */
+      }
+                  .right,
+      .left {
+         padding: 2rem;
+      } 
+      .right {
+         width: 80%;
+      }
+
+      body {
+        background-color: #111;
+      }
+
+      .left {
+         display: flex;
+         flex-direction: column;
+         gap: .5rem;
+         width: 20%;
+      }
+
+
+
+
+      #gridTable {
+   border-collapse: collapse;
+   width: 100%;
+   color: white;
+   /* margin-top: 20px; */
+   /* margin-left: -115%; */
+}
+
+#gridTable th,
+#gridTable td {
+   border: 1px solid #ddd;
+   padding: 8px; /* Adjust the padding as needed */
+   text-align: left;
+}
+
+#gridTable th {
+   background-color: #ffa31a;
+   color: white;
+}
+
+#gridTable tr:hover {
+   background-color: #ffa31a;
+}
+
+.table_head {
+   background-color: #ffa31a;
+   color: white;
+   font-size: 900;
+}
+
+h2 {
+    color: #ffa31a;
+}
+        </style>
+    </header>
 
 
 
 
 
 
-    <h2>User Information</h2>
 
-    <table id="userTable">
-        <tr>
-            <th>Username</th>
-            <th>Description</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Website</th>
-            <th>Social Media</th>
-            <th>Action</th>
-        </tr>
-    </table>
+    <div class="wrap">
 
-    <input type="text" id="usernameFilter" placeholder="Username" onkeyup="filter()"><br>
-    <input type="text" id="descriptionFilter" placeholder="Description" onkeyup="filter()"><br>
-    <input type="text" id="emailFilter" placeholder="Email" onkeyup="filter()"><br>
-    <input type="number" id="phoneFilter" placeholder="Phone" onkeyup="filter()"><br>
-    <input type="text" id="websiteFilter" placeholder="Website" onkeyup="filter()"><br>
+        <div class="left">
+            <h2>User Info balls</h2>
+
+            <input type="text" id="usernameFilter" placeholder="Username" onkeyup="filter()">
+            <input type="text" id="descriptionFilter" placeholder="Description" onkeyup="filter()">
+            <input type="text" id="emailFilter" placeholder="Email" onkeyup="filter()">
+            <input type="number" id="phoneFilter" placeholder="Phone" onkeyup="filter()">
+            <input type="text" id="websiteFilter" placeholder="Website" onkeyup="filter()">
+        </div>
+            <div class="right">
+                <div class="table-wrapper">
+                    <table id="gridTable">
+                        <tr>
+                            <th class="table_head">Username</th>
+                            <th class="table_head">Description</th>
+                            <th class="table_head">Email</th>
+                            <th class="table_head">Phone</th>
+                            <th class="table_head">Website</th>
+                            <th class="table_head">Social Media</th>
+                            <th class="table_head">Action</th>
+                        </tr>
+                    </table>
+                </div>
+        
+            </div>
+    </div>
+
 
     <script src="../js/findPartners.js"></script>
 
 </body>
+
 </html>
