@@ -1,36 +1,44 @@
 [
-    {
-        "id": 0,
-        "fromId": 0,
-        "toId": 2,
-        "type": "affiliateApproval",
-        "notes": "notes1",
-        "hashKey": ""
-    },
-    {
-        "id": 1,
-        "fromId": 0,
-        "toId": 2,
-        "type": "changeApproval",
-        "money": 10,
-        "resources": "test",
-        "notes": "notes2",
-        "hashKey": ""
-    },
-    {
-        "id": 2,
-        "fromId": 0,
-        "toId": 2,
-        "type": "partnershipTerminate",
-        "notes": "notes2",
-        "hashKey": ""
-    },
-    {
-        "id": 3,
-        "fromId": 0,
-        "toId": 2,
-        "type": "message",
-        "notes": "notes3",
-        "hashKey": ""
-    }
+  {
+    "id": 0,
+    "fromId": 0,
+    "toId": 2,
+    "type": "affiliateApproval",
+    "notes": "notes1",
+    "hashKey": ""
+  },
+  {
+    "id": 1,
+    "fromId": 0,
+    "toId": 2,
+    "type": "changeApproval",
+    "money": 10,
+    "resources": "test",
+    "notes": "notes2",
+    "hashKey": ""
+  },
+  {
+    "id": 2,
+    "fromId": 0,
+    "toId": 2,
+    "type": "partnershipTerminate",
+    "notes": "notes2",
+    "hashKey": ""
+  },
+  {
+    "id": 3,
+    "fromId": 0,
+    "toId": 2,
+    "type": "message",
+    "notes": "notes3",
+    "hashKey": ""
+  },
+  {
+    "id": 4,
+    "fromId": 2,
+    "toId": 3,
+    "type": "affiliateApproval",
+    "notes": "",
+    "hashKey": ""
+  }
 ]

@@ -2,12 +2,15 @@
   {
     "id": 0,
     "username": "name1",
-    "password": "pwd1",
+    "password": "name2",
     "description": "s",
     "email": "pop@gmail.com",
     "phone": 8888888888,
     "website": "",
-    "socialMedia": ["Facebook: pop1", "Instagram: pop2"],
+    "socialMedia": [
+      "Facebook: pop1",
+      "Instagram: pop2"
+    ],
     "messages": [],
     "visibility": "public",
     "log": [],
