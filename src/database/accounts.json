@@ -476,7 +476,7 @@
       {
         "id": 0,
         "money": 0,
-        "resources": "resource1",
+        "resources": "change1",
         "details": "notes0"
       },
       {
@@ -632,19 +632,19 @@
     ],
     "otherAssociated": [
       {
-        "username": "otherPartner1 undefined",
+        "username": "otherPartner1  undefined",
         "money": 99,
         "resources": "other1",
         "details": "n2"
       },
       {
-        "username": "otherPartner2 undefined",
+        "username": "otherPartner2  undefined",
         "money": 98,
         "resources": "other2",
         "details": "note2"
       },
       {
-        "username": "otherPartner3 undefined",
+        "username": "otherPartner3  undefined",
         "money": 97,
         "resources": "other3",
         "details": "note2"
@@ -660,21 +660,21 @@
   },
   {
     "id": 6,
-    "username": "schools1",
-    "password": "schools2",
-    "email": "test3@gmail.com",
+    "username": "school2",
+    "password": "school2",
+    "email": "school2@gmail.com",
     "phone": 8080808080,
-    "website": "sth3.com",
+    "website": "school2.com",
     "messages": [],
     "socialMedia": [],
-    "description": "q",
+    "description": "description_school2",
     "log": [],
     "associated": [
       {
         "id": 0,
         "money": 20,
-        "resources": "test2",
-        "details": "trash79"
+        "resources": "resource2",
+        "details": "notes2"
       }
     ],
     "otherAssociated": [

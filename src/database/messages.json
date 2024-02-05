@@ -18,28 +18,28 @@
     "hashKey": ""
   },
   {
-    "id": 2,
-    "fromId": 27,
-    "toId": 2,
-    "type": "partnershipTerminate",
-    "notes": "message3",
-    "hashKey": ""
-  },
-  {
-    "id": 3,
-    "fromId": 14,
-    "toId": 2,
-    "type": "message",
-    "notes": "message4",
-    "hashKey": ""
-  },
-  {
     "id": 4,
     "fromId": 0,
     "toId": 2,
     "type": "changeApproval",
     "money": 0,
     "resources": "change1",
+    "notes": "",
+    "hashKey": ""
+  },
+  {
+    "id": 5,
+    "fromId": 2,
+    "toId": 27,
+    "type": "affiliateApproval",
+    "notes": "",
+    "hashKey": ""
+  },
+  {
+    "id": 3,
+    "fromId": 2,
+    "toId": 27,
+    "type": "affiliateApproval",
     "notes": "",
     "hashKey": ""
   }
