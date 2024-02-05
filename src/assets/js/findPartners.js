@@ -51,7 +51,7 @@ function displayTable(accountData = getJSON(path.join(__dirname, '../../database
                 // Create a button
                 const newButton = document.createElement('button');
                 newButton.textContent = 'Send partner request';
-
+                
                 // Use a closure to capture the correct userObject for each iteration
                 newButton.addEventListener('click', (function (userId) {
                     return function () {

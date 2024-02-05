@@ -28,7 +28,16 @@ function populateTable(messages) {
 
         // Type
         const cell3 = row.insertCell(2);
-        cell3.innerHTML = message.type || "";
+        let x;
+        // console.log(message.type)
+        if(message.type == 'affiliateApproval')
+            x = 'Accept Partner';
+        else if(message.type == 'changeApproval')
+            x = "Accept Change";
+        else if(message.type == 'partnershipTerminate')
+            x = "Canceled Partnership";
+        else x = 'Message';
+        cell3.innerHTML = x || message.type;
         const cell4 = row.insertCell(3);
         const cell5 = row.insertCell(4);
         // if(message.type == 'changeApproval'){

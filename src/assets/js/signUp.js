@@ -27,3 +27,6 @@ function toRun() {
       makeSchoolAccount(username, password1, email);
    location.href = '../html/login.html';
 }
+function redirect() {
+   location.href = 'login.html';
+}

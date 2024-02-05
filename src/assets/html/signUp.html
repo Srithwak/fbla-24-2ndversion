@@ -7,17 +7,107 @@
    <title>sign up page</title>
 
    <link rel="stylesheet" href="../css/common.css">
+   <style>
+      body {
+   background-color: rgb(41, 41, 41);
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   -webkit-font-smoothing: antialiased;
+   box-sizing: border-box;
+   line-height: 1;
+   padding: 0;
+   margin: 0;
+   user-select: none;
+}
+
+.signup__form {
+   position: fixed;
+   background-color: #ffa31a;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 1rem;
+   padding: 4rem;
+   border-radius: 2rem;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+   padding: 1rem;
+   width: 100%;
+   border-radius: 1rem;
+   border: none;
+   outline: none;
+   background-color: white;
+   font-size: 1.5rem;
+   margin-bottom: 1rem;
+}
+
+input[type="radio"] {
+   appearance: none;
+   width: 1.5rem;
+   height: 1.5rem;
+   border-radius: 50%;
+   border: 2px solid white;
+   margin-right: 0.5rem;
+   outline: none;
+   cursor: pointer;
+   vertical-align: middle;
+   position: relative;
+   top: 2px;
+}
+
+input[type="radio"]:checked {
+   background-color: #4caf50;
+   border-color: #4caf50;
+}
+
+input[type="radio"]:checked::before {
+   content: '\2713';
+   font-size: 1rem;
+   color: white;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+input[type="button"] {
+   width: 100%;
+   font-size: 1.5rem;
+   padding: 1rem;
+   border-radius: 1rem;
+   outline: none;
+   border: none;
+   background-color: #4caf50;
+   color: white;
+   cursor: pointer;
+}
+
+input[type="button"]:hover {
+   background-color: #45a049;
+}
+.line{
+   font-size: 1.5rem;
+}
+
+   </style>
 </head>
 
 <body>
    <form class="signup__form">
-      <input type="text" placeholder="Username" class="username" required><br>
-      <input type="text" placeholder="Password" class="password1" required><br>
-      <input type="text" placeholder="Confirm password" class="password2" required><br>
-      <input type="text" placeholder="Email" class="email" required><br>
-      Partner<input type="radio" name="test" class="partner"><br>
-      School<input type="radio" name="test" class="school"><br>
+      <input type="text" placeholder="Username" class="username" required>
+      <input type="text" placeholder="Password" class="password1" required>
+      <input type="text" placeholder="Confirm password" class="password2" required>
+      <input type="text" placeholder="Email" class="email" required>
+      <div class="line">Partner <input type="radio" name="test" class="partner"></div>
+      <div class="line">School <input type="radio" name="test" class="school"></div>
       <input type="button" value="Sign up" onclick="toRun()">
+      <input type="button" onclick="redirect()" value="Back to login">
    </form>
    <script src="../js/signUp.js"></script>
 </body>

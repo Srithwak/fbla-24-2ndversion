@@ -1,5 +1,6 @@
 const { getObj, uploadJSON, getJSON } = require('../helper/helper');
 const path = require('path');
+let x = false;
 
 function onLoadRun1() {
   let account = getObj(localStorage.getItem('id'));
@@ -33,6 +34,10 @@ function addSocialMedia(value = '') {
       return;
   const socialMediaInputs = document.createElement('div');
   const inputElement = document.createElement('input');
+  if (!x) {
+    socialMediaInputs.append('.');
+    x = true;
+  }
   inputElement.type = 'text';
   inputElement.className = 'socialMedia';
   inputElement.value = value;
@@ -40,6 +45,7 @@ function addSocialMedia(value = '') {
   socialMediaInputs.appendChild(document.createElement('br'));
   socialMediaInputs.appendChild(document.createElement('br'));
   socialMediaContainer.appendChild(socialMediaInputs);
+
 }
 
 function editAccount() {
@@ -60,13 +66,11 @@ function editAccount() {
   });
   let data = getJSON(path.join(__dirname, '../../database/accounts.json'));
   for (let i = 0; i < data.length; i++) {
-    account.log = data[i].log;
     account.messages = data[i].messages;
     account.hashKey = data[i].hashKey;
-    account.log = log;
+    if (data[i].visibility != undefined)
+      account.visibility = document.querySelector('.visibility').value;
+    data[i] = account;
   }
-  if (data[i].visibility != undefined)
-    account.visibility = document.querySelector('.visibility').value;
-  data[i] = account;
   uploadJSON(path.join(__dirname, '../../database/accounts.json'), data);
 }

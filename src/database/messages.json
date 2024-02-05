@@ -1,43 +1,45 @@
 [
   {
     "id": 0,
-    "fromId": 0,
+    "fromId": 19,
     "toId": 2,
     "type": "affiliateApproval",
-    "notes": "notes1",
+    "notes": "message1",
     "hashKey": ""
   },
   {
     "id": 1,
-    "fromId": 0,
+    "fromId": 9,
     "toId": 2,
     "type": "changeApproval",
     "money": 10,
     "resources": "test",
-    "notes": "notes2",
+    "notes": "message2",
     "hashKey": ""
   },
   {
     "id": 2,
-    "fromId": 0,
+    "fromId": 27,
     "toId": 2,
     "type": "partnershipTerminate",
-    "notes": "notes2",
+    "notes": "message3",
     "hashKey": ""
   },
   {
     "id": 3,
-    "fromId": 0,
+    "fromId": 14,
     "toId": 2,
     "type": "message",
-    "notes": "notes3",
+    "notes": "message4",
     "hashKey": ""
   },
   {
     "id": 4,
-    "fromId": 2,
-    "toId": 3,
-    "type": "affiliateApproval",
+    "fromId": 0,
+    "toId": 2,
+    "type": "changeApproval",
+    "money": 0,
+    "resources": "change1",
     "notes": "",
     "hashKey": ""
   }

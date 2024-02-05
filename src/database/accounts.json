@@ -1,12 +1,12 @@
 [
   {
     "id": 0,
-    "username": "name1",
-    "password": "name2",
-    "description": "s",
-    "email": "pop@gmail.com",
-    "phone": 8888888888,
-    "website": "",
+    "username": "partner0",
+    "password": "pwd0",
+    "description": "description0",
+    "email": "partner0@gmail.com",
+    "phone": 1000000000,
+    "website": "partner0.com",
     "socialMedia": [
       "Facebook: pop1",
       "Instagram: pop2"
@@ -18,13 +18,16 @@
   },
   {
     "id": 3,
-    "username": "name2",
+    "username": "partner2",
     "password": "pwd2",
-    "description": "",
-    "email": "abc@gmail.com",
-    "phone": 1111111111,
-    "website": "",
-    "socialMedia": [],
+    "description": "description",
+    "email": "partner3@gmail.com",
+    "phone": 3333333333,
+    "website": "partner3.com",
+    "socialMedia": [
+      "Facebook: partner",
+      "Instagram: partner"
+    ],
     "messages": [],
     "visibility": "public",
     "log": [],
@@ -32,13 +35,424 @@
   },
   {
     "id": 1,
-    "username": "name3",
-    "password": "pwd3",
-    "description": "",
-    "email": "xyz@gmail.com",
+    "username": "partner1",
+    "password": "pwd1",
+    "description": "description1",
+    "email": "partner1@gmail.com",
+    "phone": 1111111111,
+    "website": "partner1.com",
+    "socialMedia": [
+      "Facebook: partner1",
+      "Instagram: partner1"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 4,
+    "username": "partner4",
+    "password": "pwd4",
+    "description": "description4",
+    "email": "partner4@gmail.com",
+    "phone": 4444444444,
+    "website": "partner4.com",
+    "socialMedia": [
+      "Facebook: partner4",
+      "Instagram: partner4"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 5,
+    "username": "partner5",
+    "password": "pwd5",
+    "description": "description5",
+    "email": "partner5@gmail.com",
     "phone": 5555555555,
-    "website": "",
-    "socialMedia": [],
+    "website": "partner5.com",
+    "socialMedia": [
+      "Facebook: partner5",
+      "Instagram: partner5"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 7,
+    "username": "partner7",
+    "password": "pwd7",
+    "description": "description7",
+    "email": "partner7@gmail.com",
+    "phone": 7777777777,
+    "website": "partner7.com",
+    "socialMedia": [
+      "Facebook: partner7",
+      "Instagram: partner7"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 8,
+    "username": "partner8",
+    "password": "pwd8",
+    "description": "description8",
+    "email": "partner8@gmail.com",
+    "phone": 8888888888,
+    "website": "partner8.com",
+    "socialMedia": [
+      "Facebook: partner8",
+      "Instagram: partner8"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 9,
+    "username": "partner9",
+    "password": "pwd9",
+    "description": "description9",
+    "email": "partner9@gmail.com",
+    "phone": 9999999999,
+    "website": "partner9.com",
+    "socialMedia": [
+      "Facebook: partner9",
+      "Instagram: partner9"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 10,
+    "username": "partner10",
+    "password": "pwd10",
+    "description": "description10",
+    "email": "partner10@gmail.com",
+    "phone": 1011011010,
+    "website": "partner10.com",
+    "socialMedia": [
+      "Facebook: partner10",
+      "Instagram: partner10"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 11,
+    "username": "partner11",
+    "password": "pwd11",
+    "description": "description11",
+    "email": "partner11@gmail.com",
+    "phone": 1101101110,
+    "website": "partner11.com",
+    "socialMedia": [
+      "Facebook: partner11",
+      "Instagram: partner11"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 12,
+    "username": "partner12",
+    "password": "pwd12",
+    "description": "description12",
+    "email": "partner12@gmail.com",
+    "phone": 1211211212,
+    "website": "partner12.com",
+    "socialMedia": [
+      "Facebook: partner12",
+      "Instagram: partner12"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 13,
+    "username": "partner13",
+    "password": "pwd13",
+    "description": "description13",
+    "email": "partner13@gmail.com",
+    "phone": 1311311313,
+    "website": "partner13.com",
+    "socialMedia": [
+      "Facebook: partner13",
+      "Instagram: partner13"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 14,
+    "username": "partner14",
+    "password": "pwd14",
+    "description": "description14",
+    "email": "partner14@gmail.com",
+    "phone": 1411411414,
+    "website": "partner14.com",
+    "socialMedia": [
+      "Facebook: partner14",
+      "Instagram: partner14"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 15,
+    "username": "partner15",
+    "password": "pwd15",
+    "description": "description15",
+    "email": "partner15@gmail.com",
+    "phone": 1511511515,
+    "website": "partner15.com",
+    "socialMedia": [
+      "Facebook: partner15",
+      "Instagram: partner15"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 16,
+    "username": "partner16",
+    "password": "pwd16",
+    "description": "description16",
+    "email": "partner16@gmail.com",
+    "phone": 1611611616,
+    "website": "partner16.com",
+    "socialMedia": [
+      "Facebook: partner16",
+      "Instagram: partner16"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 17,
+    "username": "partner17",
+    "password": "pwd17",
+    "description": "description17",
+    "email": "partner17@gmail.com",
+    "phone": 1711711717,
+    "website": "partner17.com",
+    "socialMedia": [
+      "Facebook: partner17",
+      "Instagram: partner17"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 18,
+    "username": "partner18",
+    "password": "pwd18",
+    "description": "description18",
+    "email": "partner18@gmail.com",
+    "phone": 1811811818,
+    "website": "partner18.com",
+    "socialMedia": [
+      "Facebook: partner18",
+      "Instagram: partner18"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 19,
+    "username": "partner19",
+    "password": "pwd19",
+    "description": "description19",
+    "email": "partner19@gmail.com",
+    "phone": 1911911919,
+    "website": "partner19.com",
+    "socialMedia": [
+      "Facebook: partner19",
+      "Instagram: partner19"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 20,
+    "username": "partner20",
+    "password": "pwd20",
+    "description": "description20",
+    "email": "partner20@gmail.com",
+    "phone": 2022022020,
+    "website": "partner20.com",
+    "socialMedia": [
+      "Facebook: partner20",
+      "Instagram: partner20"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 21,
+    "username": "partner21",
+    "password": "pwd21",
+    "description": "description21",
+    "email": "partner21@gmail.com",
+    "phone": 2122122121,
+    "website": "partner21.com",
+    "socialMedia": [
+      "Facebook: partner21",
+      "Instagram: partner21"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 22,
+    "username": "partner22",
+    "password": "pwd22",
+    "description": "description22",
+    "email": "partner22@gmail.com",
+    "phone": 2202202202,
+    "website": "partner22.com",
+    "socialMedia": [
+      "Facebook: partner22",
+      "Instagram: partner22"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 23,
+    "username": "partner23",
+    "password": "pwd23",
+    "description": "description23",
+    "email": "partner23@gmail.com",
+    "phone": 2322322323,
+    "website": "partner23.com",
+    "socialMedia": [
+      "Facebook: partner23",
+      "Instagram: partner23"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 24,
+    "username": "partner24",
+    "password": "pwd24",
+    "description": "description24",
+    "email": "partner24@gmail.com",
+    "phone": 2422422424,
+    "website": "partner24.com",
+    "socialMedia": [
+      "Facebook: partner24",
+      "Instagram: partner24"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 25,
+    "username": "partner25",
+    "password": "pwd25",
+    "description": "description25",
+    "email": "partner25@gmail.com",
+    "phone": 2522522525,
+    "website": "partner25.com",
+    "socialMedia": [
+      "Facebook: partner25",
+      "Instagram: partner25"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 26,
+    "username": "partner26",
+    "password": "pwd26",
+    "description": "description26",
+    "email": "partner26@gmail.com",
+    "phone": 2622622626,
+    "website": "partner26.com",
+    "socialMedia": [
+      "Facebook: partner26",
+      "Instagram: partner26"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 27,
+    "username": "partner27",
+    "password": "pwd27",
+    "description": "description27",
+    "email": "partner27@gmail.com",
+    "phone": 2722722727,
+    "website": "partner27.com",
+    "socialMedia": [
+      "Facebook: partner27",
+      "Instagram: partner27"
+    ],
+    "messages": [],
+    "visibility": "public",
+    "log": [],
+    "hashKey": ""
+  },
+  {
+    "id": 28,
+    "username": "partner28",
+    "password": "pwd28",
+    "description": "description28",
+    "email": "partner28@gmail.com",
+    "phone": 2622622628,
+    "website": "partner28.com",
+    "socialMedia": [
+      "Facebook: partner28",
+      "Instagram: partner28"
+    ],
     "messages": [],
     "visibility": "public",
     "log": [],
@@ -48,33 +462,192 @@
     "id": 2,
     "username": "school1",
     "password": "school2",
-    "email": "test@gmail.com",
-    "phone": 9999999999,
-    "website": "sth.com",
+    "email": "school1@gmail.com",
+    "phone": 9099099090,
+    "website": "school1.com",
     "messages": [],
-    "socialMedia": [],
-    "description": "p",
+    "visibility": "public",
+    "description": "description_school1",
+    "socialMedia": [
+      "Facebook: School1"
+    ],
     "log": [],
     "associated": [
       {
         "id": 0,
-        "money": "20",
-        "resources": "test2",
-        "details": "trash"
+        "money": 0,
+        "resources": "resource1",
+        "details": "notes0"
       },
       {
         "id": 1,
-        "money": "200",
-        "resources": "test9",
-        "details": "trash9"
+        "money": 1,
+        "resources": "resource2",
+        "details": "notes1"
+      },
+      {
+        "id": 3,
+        "money": 3,
+        "resources": "resource3",
+        "details": "notes3"
+      },
+      {
+        "id": 4,
+        "money": 4,
+        "resources": "resource4",
+        "details": "notes4"
+      },
+      {
+        "id": 5,
+        "money": 5,
+        "resources": "resource5",
+        "details": "notes5"
+      },
+      {
+        "id": 6,
+        "money": 6,
+        "resources": "resource6",
+        "details": "notes6"
+      },
+      {
+        "id": 7,
+        "money": 7,
+        "resources": "resource7",
+        "details": "notes7"
+      },
+      {
+        "id": 8,
+        "money": 8,
+        "resources": "resource8",
+        "details": "notes8"
+      },
+      {
+        "id": 9,
+        "money": 9,
+        "resources": "resource9",
+        "details": "notes9"
+      },
+      {
+        "id": 10,
+        "money": 10,
+        "resources": "resource10",
+        "details": "notes10"
+      },
+      {
+        "id": 11,
+        "money": 11,
+        "resources": "resource11",
+        "details": "notes11"
+      },
+      {
+        "id": 12,
+        "money": 12,
+        "resources": "resource12",
+        "details": "notes12"
+      },
+      {
+        "id": 13,
+        "money": 13,
+        "resources": "resource13",
+        "details": "notes13"
+      },
+      {
+        "id": 14,
+        "money": 14,
+        "resources": "resource14",
+        "details": "notes14"
+      },
+      {
+        "id": 15,
+        "money": 15,
+        "resources": "resource15",
+        "details": "notes15"
+      },
+      {
+        "id": 16,
+        "money": 16,
+        "resources": "resource16",
+        "details": "notes16"
+      },
+      {
+        "id": 17,
+        "money": 17,
+        "resources": "resource17",
+        "details": "notes17"
+      },
+      {
+        "id": 18,
+        "money": 18,
+        "resources": "resource18",
+        "details": "notes18"
+      },
+      {
+        "id": 19,
+        "money": 19,
+        "resources": "resource19",
+        "details": "notes19"
+      },
+      {
+        "id": 20,
+        "money": 20,
+        "resources": "resource20",
+        "details": "notes20"
+      },
+      {
+        "id": 21,
+        "money": 21,
+        "resources": "resource21",
+        "details": "notes21"
+      },
+      {
+        "id": 22,
+        "money": 22,
+        "resources": "resource22",
+        "details": "notes22"
+      },
+      {
+        "id": 23,
+        "money": 23,
+        "resources": "resource23",
+        "details": "notes23"
+      },
+      {
+        "id": 24,
+        "money": 24,
+        "resources": "resource24",
+        "details": "notes24"
+      },
+      {
+        "id": 25,
+        "money": 25,
+        "resources": "resource25",
+        "details": "notes25"
+      },
+      {
+        "id": 26,
+        "money": 26,
+        "resources": "resource26",
+        "details": "notes26"
       }
     ],
     "otherAssociated": [
       {
-        "username": "Praneeth",
-        "money": "40",
-        "resources": "test1",
-        "details": "hiya2"
+        "username": "otherPartner1 undefined",
+        "money": 99,
+        "resources": "other1",
+        "details": "n2"
+      },
+      {
+        "username": "otherPartner2 undefined",
+        "money": 98,
+        "resources": "other2",
+        "details": "note2"
+      },
+      {
+        "username": "otherPartner3 undefined",
+        "money": 97,
+        "resources": "other3",
+        "details": "note2"
       }
     ],
     "notes": [
@@ -90,7 +663,7 @@
     "username": "schools1",
     "password": "schools2",
     "email": "test3@gmail.com",
-    "phone": 7777777777,
+    "phone": 8080808080,
     "website": "sth3.com",
     "messages": [],
     "socialMedia": [],
@@ -98,7 +671,7 @@
     "log": [],
     "associated": [
       {
-        "id": 3,
+        "id": 0,
         "money": 20,
         "resources": "test2",
         "details": "trash79"

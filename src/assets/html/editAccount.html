@@ -23,22 +23,26 @@
          flex-direction: column;
          justify-content: space-around;
       }.creampiie {
-         background-color: bisque;
+         background-color: #222;
+         width: 25rem;
          padding:1rem;
       }
       input[type=text],
-      input[type=password] {
+      input[type=password],
+      input[type=email],
+      textarea {
          padding: .25rem;
          width: 100%;
          /* border-radius: .5rem; */
          border: none;
          outline: none;
-         background-color: white;
+         background-color: #444;
          /* color: white; */
          font-size: 1rem;
          line-height: normal;
 
-         color: black;
+         color: white;
+         resize: none;
       }
       input[type=button] {
          width: 100%;
@@ -61,7 +65,10 @@
          color: black;
 
       }
-
+label {
+   color: white;
+   font-size: 1.5rem;
+}
       
    </style>
 </head>
@@ -70,7 +77,7 @@
    <header>
       <nav class="nav__wrapper">
          <div class="nav__left">
-            <a href="" class="nav__logo">YEET</a>
+            <a href="" class="nav__logo">EDIT ACCOUNT</a>
          </div>
          <div class="nav__right">
             <a href="./associated.html" class="nav__link">Associated accounts</a>
@@ -96,7 +103,7 @@
             <input type="email" class="email" placeholder="Email" required><br><br>
 
             <!-- <label>Description:</label> -->
-            <textarea class="description" placeholder="Decription" required></textarea><br><br>
+            <textarea class="description" placeholder="Description" required></textarea><br><br>
 
             <!-- <label>Website:</label> -->
             <input type="text" class="website" placeholder="Website" required><br><br>
@@ -110,7 +117,7 @@
             <div class="socialMediaContainer">
                <label>Social Media:</label>
                <div class="socialMediaInputs">
-               </div>
+               </div><br><br><br><br><br>
                <input type="button" value="Add Social Media" onclick="addSocialMedia()">
             </div>
 
